@@ -1,191 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
 
-    <title>Dashboard Template for Bootstrap</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-   
-    <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+  <title>Ranking</title>
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/dashboard.css" rel="stylesheet">
+  <style>
+    .pic-profile{
+      width: 32px;
+      
+   }
+  </style>
+</head>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<body>
 
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">West Group challenge</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Anderson <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="perfil.html">Perfil</a></li>                
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Sair</a></li>                
-              </ul>
-            </li>
-		
-          </ul>
-        
-        </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">West Group challenge</a>
       </div>
-    </nav>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Anderson <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="perfil.html">Perfil</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+          </li>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="index.html">Rank <span class="sr-only">(current)</span></a></li>
-            <li><a href="categoria.html">Categorias</a></li>
-            <li><a href="unidade.html">Unidades</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-			<li><a href="venda.html">Registrar Venda</a></li>
-          </ul>
-        
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="index.html">Ranking Semanal <span class="sr-only">(current)</span></a></li>
+          <li><a href="rank_consolidado.html">Ranking Consolidado</a></li>
+          <li><a href="categoria.html">Categorias</a></li>
+          <li><a href="unidade.html">Unidades</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="venda.html">Registrar Venda</a></li>
+        </ul>
+
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Unidades</h1>
+
+        <div class="row placeholders">
+          <div id="testeToggle" class="col-xs-6 col-sm-3 placeholder">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200"
+              height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>Rio de Janeiro</h4>
+          </div>
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200"
+              height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>Macaé</h4>
+          </div>
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200"
+              height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>Vitória</h4>
+          </div>
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200"
+              height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>São Paulo</h4>
+          </div>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Unidades</h1>
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Rio</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Macaé</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Vitória</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>São Paulo</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-
-          <div class="row">
-              <div class="form-group">
-                <div class="col-sm-3">
-                  <select class="form-control">
-                    <option>Unidade</option>
-                    <option>Rio</option>
-                    <option>São Paulo</option>
-                    <option>Macaé</option>           
-                  </select>
-                </div>
-
-                <div class="col-sm-3">
-                  <select class="form-control">
-                    <option>Categoria</option>
-                    <option>Diamante</option>
-                    <option>Ouro</option>
-                    <option>Prata</option>
-                    <option>Bronze</option>           
-                  </select>
-                </div>
-
-              </div>
+        <div id="testeTabela" class="tab-content">
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#tabela_rank">Bronze</a></li>
+            <li><a data-toggle="tab" href="#tabela_rank_2">Prata</a></li>
+            <li><a data-toggle="tab" href="#tabela_rank">Ouro</a></li>
+            <li><a data-toggle="tab" href="#tabela_rank">Diamante</a></li>
+          </ul>
 
 
-          </div>
-
-          <h2 class="sub-header">Rank - RIO</h2>
-          <div class="table-responsive">
+          <div id="tabela_rank" class="tab-pane fade in active table-responsive">
+            <h2 class="sub-header">Ranking - Rio de Janeiro</h2>
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Vendedor</th>
-                  <th>Unidade</th>
-                  <th>Categoria</th>
-                  <th>%</th>
+                  <th>Meta %</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>98</td>
+                  <td>1</td>
+
+                  <td> 
+                      <img class="pic-profile img-circle" src="https://osegredo.com.br/wp-content/uploads/2018/03/O-lugar-da-mulher-830x450.jpg" alt="">
+                    Lorem
+                  </td>
+
+                  <td>
+                    
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+
+                  </td>
                 </tr>
                 <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>69</td>
+                  <td>2</td>
+                 <td> 
+                      <img class="pic-profile img-circle" src="https://osegredo.com.br/wp-content/uploads/2018/03/O-lugar-da-mulher-830x450.jpg" alt="">
+                    Lorem
+                  </td>
+                  <td>
+                    
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+
+                  </td>
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>58</td>
+                  <td>3</td>
+                  <td> 
+                      <img class="pic-profile img-circle" src="https://osegredo.com.br/wp-content/uploads/2018/03/O-lugar-da-mulher-830x450.jpg" alt="">
+                    Lorem
+                  </td>
+                  <td>
+                    
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+
+                  </td>
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
+                  <td>4</td>
+                  <td> 
+                      <img class="pic-profile img-circle" src="https://osegredo.com.br/wp-content/uploads/2018/03/O-lugar-da-mulher-830x450.jpg" alt="">
+                    Lorem
+                  </td>
+                  <td>
+
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+
+                  </td>
                 </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-     
               </tbody>
             </table>
           </div>
+          <div id="tabela_rank_2" class="tab-pane table-responsive">
+            <h2 class="sub-header">Ranking - Macaé</h2>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>   
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="js/bootstrap.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $("#testeTabela").hide();
 
-  </body>
+          $("#testeToggle").click(function () {
+            $("#testeTabela").slideToggle();
+          });
+        });
+      </script>
+
+</body>
+
 </html>
