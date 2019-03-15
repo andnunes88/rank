@@ -1,8 +1,8 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('auth.login');
+Route::get('/perfil', function () {
+    return view('perfil');
 });
 
 Auth::routes();
