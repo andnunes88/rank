@@ -33,6 +33,27 @@ class UnidadeController extends Controller
         return redirect()->route('unidade');
     }
 
+    public function editarUnidade($id_unidade){
+
+        $unidade = Unidade::find($id_unidade);
+
+        return view('site.unidade.editar', compact('unidade'));     
+    }    
+
+    public function atualizarUnidade(Request $request, $id_unidade){        
+
+        $dados = $request->all();
+
+        $unidade = Unidade::where('id',$id_unidade)->first();   
+        $unidade->uni_nome = $dados['unidade_nome'];
+        $unidade->update();
+       
+        \Session::flash('mensagem',['msg'=>'Unidade atualizada com sucesso!','class'=>'alert alert-success']);
+
+        return redirect()->route('unidade');
+       
+    }
+
     public function excluirUnidade($id_unidade){
         
         $unidade = Unidade::find($id_unidade);

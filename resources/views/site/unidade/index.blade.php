@@ -22,43 +22,56 @@
       <!--------------------------
         | Your Page Content Here |
         -------------------------->       
-        <div class="col-md-6">
 
-        	
-        	<div class="box">
-        		<div class="box-header">
-        			<h3 class="box-title">Westgroup</h3>
-        		</div>
-        		<!-- /.box-header -->
-        		<div class="box-body no-padding">
-        			<table class="table table-condensed">
-        				<tbody>
-        					<tr>
-        						<th style="width: 10px">#</th>
-        						<th>Unidades</th>
-        						<th>Ação</th>
-        					</tr>
+        <div class="row">
+            
+            <div class="col-md-6">
+                <a href="{{route('unidade.cadastrar')}}"><div class="btn btn-success">Novo</div></a>
+            </div>
+            <br> <br>
+            
+        </div>     
+        
+		<div class="row">	
+		
+			<div class="col-md-6">
+				
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Westgroup</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body no-padding">
+						<table class="table table-condensed">
+							<tbody>
+								<tr>
+									<th style="width: 10px">#</th>
+									<th>Unidades</th>
+									<th>Ação</th>
+								</tr>
 
-                            @foreach ($unidades as $unidade)
-                            
-        					<tr>
-        						<td>1.</td>
-        						<td>{{$unidade->uni_nome}}</td>
+								@foreach ($unidades as $unidade)
+								
+								<tr>
+									<td>1.</td>
+									<td>{{$unidade->uni_nome}}</td>
 
-        						<td>
-                                    <a href="#">Editar</a> | 
-                                    <a href="{{route('unidade.excluir', $unidade->id)}}">Excluir</td></a>
-        					   </tr>
+									<td>
+										<a href="{{route('unidade.editar', $unidade->id)}}"> <div class="btn btn-warning">Editar</div></a> 
+										<a href="{{route('unidade.excluir', $unidade->id)}}"> <div class="btn btn-danger"> Excluir</div></a>
+								   </tr>
 
-                            @endforeach 
+								@endforeach 
 
-        				</tbody>
-        			</table>
-        		</div>
-        		<!-- /.box-body -->
-        	</div>
-        	<!-- /.box -->
-        </div>
+							</tbody>
+						</table>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+		
+		</div>
 
     </section>
     <!-- /.content -->

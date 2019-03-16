@@ -26,20 +26,23 @@
 
         <div class="col-md-12">
 
-            <form action="{{route('unidade.salvar')}}" method="post">
+            <form action="{{route('unidade.atualizar', $unidade->id)}}" method="post">
 
                 {{ csrf_field() }}
 
                 <div class="box box-danger">
                     <div class="box-header">
-                        <h3 class="box-title">Nova Unidade</h3>
+                        <h3 class="box-title">Editar Unidade</h3>
                     </div>
                     <div class="box-body">
 
                         <div class="form-group">
                           <label>Nome da Unidade</label>
-                          <input type="text" name="unidade_nome" class="form-control" placeholder="Nome da unidade">
-                        </div>              
+                          <input type="text" name="unidade_nome" class="form-control" placeholder="Nome da unidade" value="{{$unidade->uni_nome}}">
+                        </div> 
+
+                        <!-- Esse imput hidden é importante para o metódio put funcionar-->
+                        <input type="hidden" name="_method" value="put">             
 
                     </div>
                     <!-- /.box-body -->

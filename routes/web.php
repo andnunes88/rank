@@ -18,6 +18,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/unidade', 'UnidadeController@index')->name('unidade');
 Route::get('/unidade/novo', 'UnidadeController@cadastrarUnidade')->name('unidade.cadastrar');
 Route::post('/unidade/salvar/', 'UnidadeController@salvarUnidade')->name('unidade.salvar');
+Route::get('/unidade/editar/{id_unidade}', 'UnidadeController@editarUnidade')->name('unidade.editar');
+Route::put('/unidade/atualizar/{id_unidade}', 'UnidadeController@atualizarUnidade')->name('unidade.atualizar');
 Route::get('/unidade/excluir/{id_unidade}', 'UnidadeController@excluirUnidade')->name('unidade.excluir');
 
 #Categorias
