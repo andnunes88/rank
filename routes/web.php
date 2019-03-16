@@ -6,7 +6,7 @@ Route::get('/', function () {
 });
 
 Route::get('/perfil', function () {
-    return view('perfil');
+    return view('site.perfil.index');
 });
 
 Auth::routes();

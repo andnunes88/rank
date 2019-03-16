@@ -29,7 +29,7 @@ class CategoriaController extends Controller
 
         \Session::flash('mensagem',['msg'=>'categoria cadastrada com sucesso!','class'=>'alert alert-success']);
 
-        return redirect()->route('categoria');
+        return redirect()->route('categorias');
     }
 
     public function editarCategoria($id_categoria){
@@ -49,7 +49,7 @@ class CategoriaController extends Controller
        
         \Session::flash('mensagem',['msg'=>'categoria atualizada com sucesso!','class'=>'alert alert-success']);
 
-        return redirect()->route('categoria');
+        return redirect()->route('categorias');
        
     }
 
@@ -61,6 +61,6 @@ class CategoriaController extends Controller
 
         \Session::flash('mensagem',['msg'=>'categoria Excluida com sucesso!','class'=>'alert alert-success']);
 
-        return redirect()->route('categoria');
+        return redirect()->route('categorias');
     }
 }

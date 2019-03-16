@@ -30,7 +30,7 @@ class UnidadeController extends Controller
 
         \Session::flash('mensagem',['msg'=>'Unidade cadastrada com sucesso!','class'=>'alert alert-success']);
 
-        return redirect()->route('unidade');
+        return redirect()->route('unidades');
     }
 
     public function editarUnidade($id_unidade){
@@ -50,7 +50,7 @@ class UnidadeController extends Controller
        
         \Session::flash('mensagem',['msg'=>'Unidade atualizada com sucesso!','class'=>'alert alert-success']);
 
-        return redirect()->route('unidade');
+        return redirect()->route('unidades');
        
     }
 
@@ -62,6 +62,6 @@ class UnidadeController extends Controller
 
         \Session::flash('mensagem',['msg'=>'Unidade Excluida com sucesso!','class'=>'alert alert-success']);
 
-        return redirect()->route('unidade');
+        return redirect()->route('unidades');
     }
 }
