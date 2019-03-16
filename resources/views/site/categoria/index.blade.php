@@ -7,12 +7,12 @@
 
 	<section class="content-header">
 		<h1>
-			Unidades
+			Categorias
 			<small>Registradas</small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-			<li class="active">Unidades</li>
+			<li class="active">Categorias</li>
 		</ol>
 	</section>
 
@@ -26,7 +26,7 @@
         <div class="row">
             
             <div class="col-md-6">
-                <a href="{{route('unidade.cadastrar')}}"><div class="btn btn-success">Novo</div></a>
+                <a href="{{route('categoria.cadastrar')}}"><div class="btn btn-success">Novo</div></a>
             </div>
             <br> <br>
             
@@ -46,19 +46,19 @@
 							<tbody>
 								<tr>
 									<th style="width: 10px">#</th>
-									<th>Unidades</th>
+									<th>categorias</th>
 									<th>Ação</th>
 								</tr>
 
-								@foreach ($unidades as $unidade)
+								@foreach ($categorias as $categoria)
 								
 								    <tr>
-									   <td>{{$unidade->id}}</td>
-									   <td>{{$unidade->uni_nome}}</td>
+									   <td>{{$categoria->id}}</td>
+									   <td>{{$categoria->cat_nome}}</td>
 
     									<td>
-    										<a href="{{route('unidade.editar', $unidade->id)}}"> <div class="btn btn-warning">Editar</div></a> 
-    										<a href="{{route('unidade.excluir', $unidade->id)}}"> <div class="btn btn-danger"> Excluir</div></a>
+    										<a href="{{route('categoria.editar', $categoria->id)}}"> <div class="btn btn-warning">Editar</div></a> 
+    										<a href="{{route('categoria.excluir', $categoria->id)}}"> <div class="btn btn-danger"> Excluir</div></a>
                                         </td>
 								   </tr>
 

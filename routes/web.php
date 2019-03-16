@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 #Unidades
-Route::get('/unidade', 'UnidadeController@index')->name('unidade');
+Route::get('/unidades', 'UnidadeController@index')->name('unidades');
 Route::get('/unidade/novo', 'UnidadeController@cadastrarUnidade')->name('unidade.cadastrar');
 Route::post('/unidade/salvar/', 'UnidadeController@salvarUnidade')->name('unidade.salvar');
 Route::get('/unidade/editar/{id_unidade}', 'UnidadeController@editarUnidade')->name('unidade.editar');
@@ -23,7 +23,13 @@ Route::put('/unidade/atualizar/{id_unidade}', 'UnidadeController@atualizarUnidad
 Route::get('/unidade/excluir/{id_unidade}', 'UnidadeController@excluirUnidade')->name('unidade.excluir');
 
 #Categorias
-Route::get('/ranking', 'HomeController@sair')->name('sair');
+Route::get('/categorias', 'CategoriaController@index')->name('categorias');
+Route::get('/categoria/novo', 'CategoriaController@cadastrarCategoria')->name('categoria.cadastrar');
+Route::post('/categoria/salvar/', 'CategoriaController@salvarCategoria')->name('categoria.salvar');
+Route::get('/categoria/editar/{id_categoria}', 'CategoriaController@editarCategoria')->name('categoria.editar');
+Route::put('/categoria/atualizar/{id_categoria}', 'CategoriaController@atualizarCategoria')->name('categoria.atualizar');
+Route::get('/categoria/excluir/{id_categoria}', 'CategoriaController@excluirCategoria')->name('categoria.excluir');
+
 
 #ranking
 Route::get('/sair', 'HomeController@sair')->name('sair');

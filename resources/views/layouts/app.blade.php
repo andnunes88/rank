@@ -186,8 +186,8 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Ranking</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Unidades</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Categorias</span></a></li>
+        <li><a href="{{route('unidades')}}"><i class="fa fa-link"></i> <span>Unidades</span></a></li>
+        <li><a href="{{route('categorias')}}"><i class="fa fa-link"></i> <span>Categorias</span></a></li>
         
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Vendas</span>
