@@ -5,14 +5,12 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/perfil', function () {
-    return view('site.perfil.index');
-});
-
 Auth::routes();
 
 # Vendedor
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/perfil', 'PerfilController@index')->name('perfil');
 
 #Unidades
 Route::get('/unidades', 'UnidadeController@index')->name('unidades');

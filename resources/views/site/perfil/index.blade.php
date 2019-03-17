@@ -1,150 +1,73 @@
 @extends('layouts.app')
 
-@section('content') 
+@section('content')
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+   <div class="content-wrapper" style="min-height: 1126px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Perfil
+        
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>        
+        <li class="active">Perfil</li>
+      </ol>
+    </section>
 
-	<section class="content-header">
-		<h1>
-			Perfil
-			<small>Complete seu perfil</small>
-		</h1>
-		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-			<li class="active">Here</li>
-		</ol>
-	</section>
+    <!-- Main content -->
+    <section class="content">      
 
-	<!-- Main content -->
-	<section class="content container-fluid">
+          <!-- Profile Image -->
+          <div class="box box-primary">
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-        <!-- Content Header (Page header) -->
+              <h3 class="profile-username text-center">Nina Mcintire</h3>
 
-        <div class="col-md-12">
+              <p class="text-muted text-center">Rio de Janeiro</p>
 
-        	<div class="box box-danger">
-        		<div class="box-header">
-        			<h3 class="box-title">Dados do Perfil</h3>
-        		</div>
-        		<div class="box-body">
+              <ul class="list-group list-group-unbordered">
+                <li class="list-group-item">
+                  <b>Vendas Realizadas</b> <a class="pull-right">1,322</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Ranking</b> <a class="pull-right">543</a>
+                </li>
 
-        			<div class="form-group">
-	                  <label>Nome </label>
-	                  <input type="text" class="form-control" placeholder="Nome ...">
-	                </div>
+              </ul>
+             
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box --> 
 
-	                <div class="form-group">
-	                  <label>CPF </label>
-	                  <input type="text" class="form-control" placeholder="Nome ...">
-	                </div>
-					
-					<!-- Categoria dd/mm/yyyy -->
-	                <div class="form-group">
-	                  <label>Categoria </label>
-	                  <input type="text" class="form-control" placeholder="Nome ...">
-	                </div>
-	                <!-- /.categoria group -->
+          <!-- About Me Box -->
+          <div class="box box-primary">
+            <div class="box-header with-border text-center">
+              <h3 class="box-title">Sobre mim</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body text-center">
+              <strong><i class="fa fa-phone margin-r-5"></i> Telefone</strong>
 
-        			
+              <p class="text-muted">
+                (21) 2222-3333
+              </p>
 
-        		</div>
-        		<!-- /.box-body -->
-        	</div>
-        	<!-- /.box -->
+              <hr>
+     
+              <strong><i class="fa fa-file-text-o margin-r-5"></i> Frase de inspiração</strong>
 
-        	<div class="box box-info">
-        		<div class="box-header">
-        			<h3 class="box-title">Mais Informações</h3>
-        		</div>        		
-
-        		<div class="box-body">
-					
-					<!-- foto Picker -->
-        			<div class="form-group">
-        				<label>Foto:</label>
-        				<input type="text" class="form-control my-colorpicker1 colorpicker-element">
-        			</div>
-        			<!-- /.form group -->
-
-        			<!-- Date dd/mm/yyyy -->
-        			<div class="form-group">
-        				<label>Data de Nascimento</label>
-
-        				<div class="input-group">
-        					<div class="input-group-addon">
-        						<i class="fa fa-calendar"></i>
-        					</div>
-        					<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-        				</div>
-        				<!-- /.input group -->
-        			</div>
-        			<!-- /.form group -->
-
-        			<!-- phone mask -->
-        			<div class="form-group">
-        				<label>Telefone:</label>
-
-        				<div class="input-group">
-        					<div class="input-group-addon">
-        						<i class="fa fa-phone"></i>
-        					</div>
-        					<input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
-        				</div>
-        				<!-- /.input group -->
-        			</div>
-        			<!-- /.form group -->        			
-
-        			<!-- time Picker -->
-        			<div class="bootstrap-timepicker">
-        				<div class="form-group">
-        					<label>Unidade</label>
-
-        					<div class="input-group">
-        						<input type="text" class="form-control timepicker">
-
-        						<div class="input-group-addon">
-        							<i class="fa fa-clock-o"></i>
-        						</div>
-        					</div>
-        					<!-- /.input group -->
-        				</div>
-        				<!-- /.form group -->
-        			</div>
-
-        			<!-- frase -->
-        			<div class="form-group">
-        				<label>Um frase que te representa</label>
-
-        				<div class="input-group my-colorpicker2 colorpicker-element">
-        					<input type="text" class="form-control">
-
-        					<div class="input-group-addon">
-        						<i></i>
-        					</div>
-        				</div>
-        				<!-- /.input group -->
-        			</div>
-        			<!-- /.form frase -->
-
-        		</div>
-        		<!-- /.box-body -->
-        	</div>
-        	<!-- /.box -->
-			
-			<!-- botão salvar -->
-			<button type="button" class="btn btn-block btn-primary btn-flat">Salvar</button>        	
-        	<!-- /.botão salvar -->
-
-        </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+       
 
     </section>
     <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+  </div>
 
 @endsection
-
