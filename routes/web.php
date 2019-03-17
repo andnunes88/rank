@@ -30,6 +30,8 @@ Route::get('/categoria/editar/{id_categoria}', 'CategoriaController@editarCatego
 Route::put('/categoria/atualizar/{id_categoria}', 'CategoriaController@atualizarCategoria')->name('categoria.atualizar');
 Route::get('/categoria/excluir/{id_categoria}', 'CategoriaController@excluirCategoria')->name('categoria.excluir');
 
+#Temporada
+Route::get('/temporadas', 'TemporadaController@index')->name('temporadas');
 
 #ranking
 Route::get('/sair', 'HomeController@sair')->name('sair');
