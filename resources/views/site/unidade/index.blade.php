@@ -2,81 +2,53 @@
 
 @section('content')
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-
+<div class="content-wrapper" style="min-height: 1126.3px;">
+	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Unidades
-			<small>Registradas</small>
+			Unidade
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-			<li class="active">Unidades</li>
+			<li><a href="#"><i class="fa fa-dashboard"></i> Início</a></li>
+			<li class="active">Unidade</li>
 		</ol>
 	</section>
 
 	<!-- Main content -->
-	<section class="content container-fluid">
+	<section class="content">
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->       
-
-        <div class="row">
-            
-            <div class="col-md-6">
-                <a href="{{route('unidade.cadastrar')}}"><div class="btn btn-success">Novo</div></a>
-            </div>
-            <br> <br>
-            
-        </div>     
-        
-		<div class="row">	
-		
-			<div class="col-md-6">
-				
-				<div class="box">
-					<div class="box-header">
-						<h3 class="box-title">Westgroup</h3>
-					</div>
-					<!-- /.box-header -->
-					<div class="box-body no-padding">
-						<table class="table table-condensed">
-							<tbody>
-								<tr>
-									<th style="width: 10px">#</th>
-									<th>Unidades</th>
-									<th>Ação</th>
-								</tr>
-
-								@foreach ($unidades as $unidade)
-								
-								    <tr>
-									   <td>{{$unidade->id}}</td>
-									   <td>{{$unidade->uni_nome}}</td>
-
-    									<td>
-    										<a href="{{route('unidade.editar', $unidade->id)}}"> <div class="btn btn-warning">Editar</div></a> 
-    										<a href="{{route('unidade.excluir', $unidade->id)}}"> <div class="btn btn-danger"> Excluir</div></a>
-                                        </td>
-								   </tr>
-
-								@endforeach 
-
-							</tbody>
-						</table>
-					</div>
-					<!-- /.box-body -->
-				</div>
-				<!-- /.box -->
+		<div class="box">
+			<div class="box-header">
+				<a href="{{route('unidade.cadastrar')}}"><div class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Novo</div></a>
 			</div>
-		
+			<!-- /.box-header -->
+			<div class="box-body no-padding">
+				<table class="table table-striped">
+					<tbody>
+						
+						<tr>
+							<th>Nome</th>
+							<th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
+						</tr> 
+
+						@foreach($unidades as $unidade)           
+							<tr>
+								<td>{{$unidade->uni_nome}}</td>
+								<td style="text-align: center; width: 30%">
+									<a href="{{route('unidade.editar', $unidade->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
+									<a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('unidade.excluir', $unidade->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>
+								</td>
+							</tr>
+						@endforeach
+
+					</tbody>
+				</table>
+			</div>
+			<!-- /.box-body -->
 		</div>
 
-    </section>
-    <!-- /.content -->
+	</section>
+	<!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
 
 @endsection
