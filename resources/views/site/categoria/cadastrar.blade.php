@@ -7,8 +7,7 @@
 
     <section class="content-header">
         <h1>
-            categoria
-            <small>Registrar</small>
+            Cadastrar categoria           
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -17,43 +16,35 @@
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
+    <section class="content">        
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-        <!-- Content Header (Page header) -->
+        <form action="{{route('categoria.salvar')}}" method="post">
 
-        <div class="col-md-12">
+            {{ csrf_field() }}
 
-            <form action="{{route('categoria.salvar')}}" method="post">
+            <div class="box box-danger">
 
-                {{ csrf_field() }}
+                <div class="box-body">
 
-                <div class="box box-danger">
-                    <div class="box-header">
-                        <h3 class="box-title">Nova categoria</h3>
-                    </div>
-                    <div class="box-body">
+                    <div class="form-group">
+                      <label>Nome da categoria</label>
+                      <input type="text" name="categoria_nome" class="form-control" placeholder="Nome da categoria">
+                    </div>              
 
-                        <div class="form-group">
-                          <label>Nome da categoria</label>
-                          <input type="text" name="categoria_nome" class="form-control" placeholder="Nome da categoria">
-                        </div>              
-
-                    </div>
-                    <!-- /.box-body -->
-                 
                 </div>
-                <!-- /.box --> 
+                <!-- /.box-body -->
+
+                 <div class="box-footer text-center">
+                    <!-- botão salvar -->
+                    <button type="submit" class="btn btn-primary btn-flat">Salvar</button>            
+                    <!-- /.botão salvar -->
+                </div>
+                <!-- /.box-footer -->
                 
-                <!-- botão salvar -->
-                <button type="submit" class="btn btn-block btn-primary btn-flat">Salvar</button>            
-                <!-- /.botão salvar -->
+            </div>            
+            <!-- /.box -->            
 
-            </form>
-
-        </div>
+        </form>        
 
     </section>
     <!-- /.content -->

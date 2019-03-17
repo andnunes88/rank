@@ -7,8 +7,7 @@
 
 	<section class="content-header">
 		<h1>
-			Categorias
-			<small>Registradas</small>
+			Categorias			
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -17,62 +16,40 @@
 	</section>
 
 	<!-- Main content -->
-	<section class="content container-fluid">
-
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->       
-
-        <div class="row">
-            
-            <div class="col-md-6">
-                <a href="{{route('categoria.cadastrar')}}"><div class="btn btn-success">Novo</div></a>
-            </div>
-            <br> <br>
-            
-        </div>     
-        
-		<div class="row">	
-		
-			<div class="col-md-6">
+	<section class="content"> 
 				
-				<div class="box">
-					<div class="box-header">
-						<h3 class="box-title">Westgroup</h3>
-					</div>
-					<!-- /.box-header -->
-					<div class="box-body no-padding">
-						<table class="table table-condensed">
-							<tbody>
-								<tr>
-									<th style="width: 10px">#</th>
-									<th>categorias</th>
-									<th>Ação</th>
-								</tr>
-
-								@foreach ($categorias as $categoria)
-								
-								    <tr>
-									   <td>{{$categoria->id}}</td>
-									   <td>{{$categoria->cat_nome}}</td>
-
-    									<td>
-    										<a href="{{route('categoria.editar', $categoria->id)}}"> <div class="btn btn-warning">Editar</div></a> 
-    										<a href="{{route('categoria.excluir', $categoria->id)}}"> <div class="btn btn-danger"> Excluir</div></a>
-                                        </td>
-								   </tr>
-
-								@endforeach 
-
-							</tbody>
-						</table>
-					</div>
-					<!-- /.box-body -->
-				</div>
-				<!-- /.box -->
+		<div class="box">
+			<div class="box-header">
+				<a href="{{route('categoria.cadastrar')}}"><div class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Novo</div></a>
 			</div>
-		
+			<!-- /.box-header -->
+			<div class="box-body no-padding">
+				<table class="table table-condensed">
+					<tbody>
+						<tr>
+							<th>Categorias</th>
+							<th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
+						</tr>
+
+						@foreach ($categorias as $categoria)
+						
+						    <tr>
+							    <td>{{$categoria->cat_nome}}</td>
+
+								<td style="text-align: center">
+									<a href="{{route('categoria.editar', $categoria->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
+									<a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('categoria.excluir', $categoria->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>
+                                </td>
+						   </tr>
+
+						@endforeach 
+
+					</tbody>
+				</table>
+			</div>
+			<!-- /.box-body -->
 		</div>
+		<!-- /.box -->	
 
     </section>
     <!-- /.content -->

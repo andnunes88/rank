@@ -34,7 +34,7 @@
 						@foreach($unidades as $unidade)           
 							<tr>
 								<td>{{$unidade->uni_nome}}</td>
-								<td style="text-align: center; width: 30%">
+								<td style="text-align: center">
 									<a href="{{route('unidade.editar', $unidade->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
 									<a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('unidade.excluir', $unidade->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>
 								</td>
