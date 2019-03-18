@@ -30,6 +30,11 @@ Route::get('/categoria/excluir/{id_categoria}', 'CategoriaController@excluirCate
 
 #Temporada
 Route::get('/temporadas', 'TemporadaController@index')->name('temporadas');
+Route::get('/temporada/novo', 'TemporadaController@cadastrarTemporada')->name('temporada.cadastrar');
+Route::post('/temporada/salvar/', 'TemporadaController@salvarTemporada')->name('temporada.salvar');
+Route::get('/temporada/editar/{id_temporada}', 'TemporadaController@editarTemporada')->name('temporada.editar');
+Route::put('/temporada/atualizar/{id_categoria}', 'TemporadaController@atualizarTemporada')->name('temporada.atualizar');
+Route::get('/temporada/excluir/{id_categoria}', 'TemporadaController@excluirTemporada')->name('temporada.excluir');
 
 #ranking
 Route::get('/ranking', 'RankingController@index')->name('ranking');
