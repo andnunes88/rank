@@ -32,4 +32,6 @@ Route::get('/categoria/excluir/{id_categoria}', 'CategoriaController@excluirCate
 Route::get('/temporadas', 'TemporadaController@index')->name('temporadas');
 
 #ranking
+Route::get('/ranking', 'RankingController@index')->name('ranking');
+
 Route::get('/sair', 'HomeController@sair')->name('sair');

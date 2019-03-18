@@ -182,7 +182,7 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#"><i class="fa fa-sitemap"></i> <span>Ranking</span></a></li>
+        <li><a href="{{route('ranking')}}"><i class="fa fa-sitemap"></i> <span>Ranking</span></a></li>
         <li><a href="{{route('unidades')}}"><i class="fa fa-university"></i> <span>Unidades</span></a></li>
         <li><a href="{{route('categorias')}}"><i class="fa fa-th"></i> <span>Categorias</span></a></li>
         <li><a href="{{route('temporadas')}}"><i class="fa fa-link"></i> <span>Temporadas</span></a></li>
