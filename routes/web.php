@@ -1,5 +1,10 @@
 <?php
 
+Route::get('/teste', function () {
+    $usuario = App\User::find(1);
+    $usuario->password = bcrypt("123456");
+    $usuario->update();
+});
 
 Route::get('/', function () {
     return view('auth.login');

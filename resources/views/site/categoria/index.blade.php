@@ -24,7 +24,7 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body no-padding">
-				<table class="table table-condensed">
+				<table class="table table-striped">
 					<tbody>
 						<tr>
 							<th>Categorias</th>

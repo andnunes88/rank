@@ -33,9 +33,9 @@
 
           @foreach($temporadas as $temporada)            
             <tr>         
-              <td>{{$temporada->tem_nome}}</td>
-              <td>{{$temporada->tem_dataInicio}}</td>
-              <td>{{$temporada->tem_dataFim}}</td>
+              <td>{{$temporada->tem_nome}}</td>              
+              <td>{{ date('d/m/Y', strtotime($temporada->tem_dataInicio)) }}</td>
+              <td>{{ date('d/m/Y', strtotime($temporada->tem_dataInicio)) }}</td>
               <td style="text-align: center">
 
                 <a href="{{route('temporada.editar', $temporada->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
