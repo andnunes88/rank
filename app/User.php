@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'unidade_id', 'categoria_id', 'name', 'email', 'password', 'cpf','telefone','frase','foto'
     ];
 
     /**
@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function categoria(){
+        return $this->belongsTo('App\Categoria');
+    }
+
+    public function unidade(){
+        return $this->belongsTo('App\Unidade');
+    }
 }

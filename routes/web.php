@@ -1,9 +1,11 @@
 <?php
 
 Route::get('/teste', function () {
-    $usuario = App\User::find(1);
-    $usuario->password = bcrypt("123456");
-    $usuario->update();
+    
+    $usuario = App\User::find(7);
+
+    dd($usuario->categoria);
+    
 });
 
 Route::get('/', function () {

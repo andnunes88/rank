@@ -41,7 +41,7 @@
                 </tr>
 
                 <tr>
-                  <td>2.</td>
+                  <td>1.</td>
                   <td>
 					<img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
                   Ciclano</td>
@@ -54,7 +54,7 @@
                 </tr>
 
                 <tr>
-                  <td>1.</td>
+                  <td>2.</td>
                   <td>
 					<img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
                   Fulano</td>

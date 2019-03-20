@@ -48,6 +48,7 @@
                 <div class="form-group">
                       <label>Unidade</label>
                       <select class="form-control" name="unidade">
+                        <option value="">Escolher Unidade</option>
                         @foreach($unidades as $unidade)
                             <option value="{{$unidade->id}}">{{$unidade->uni_nome}}</option>
                         @endforeach
@@ -60,6 +61,7 @@
                 <div class="form-group">
                       <label>Categoria</label>
                       <select class="form-control" name="categoria">
+                        <option value="">Escolher Categoria</option>
                         @foreach($categorias as $categoria)
                             <option value="{{$categoria->id}}">{{$categoria->cat_nome}}</option>
                         @endforeach
