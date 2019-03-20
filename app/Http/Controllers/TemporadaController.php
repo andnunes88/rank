@@ -20,7 +20,7 @@ class TemporadaController extends Controller
         return view('site.temporada.cadastrar');     
     }
 
-        public function salvarTemporada(Request $request){
+    public function salvarTemporada(Request $request){
 
     	$dados = $request->all();
 

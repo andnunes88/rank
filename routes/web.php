@@ -15,7 +15,15 @@ Auth::routes();
 # Vendedor
 Route::get('/home', 'HomeController@index')->name('home');
 
+# Perfil
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
+Route::get('/perfil/novo', 'PerfilController@cadastrarPerfil')->name('perfil.cadastrar');
+Route::post('/perfil/salvar/', 'PerfilController@salvarPerfil')->name('perfil.salvar');
+
+# Vendedores 
+Route::get('/vendedores', 'VendedorController@index')->name('vendedores');
+Route::get('/vendedor/novo', 'VendedorController@cadastrarVendedor')->name('vendedor.cadastrar');
+Route::post('/vendedor/salvar/', 'VendedorController@salvarVendedor')->name('vendedor.salvar');
 
 #Unidades
 Route::get('/unidades', 'UnidadeController@index')->name('unidades');
