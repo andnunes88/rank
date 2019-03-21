@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 
-class UsersTableSeeder extends Seeder
+class UsuarioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,12 +12,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         $usuario = new User();
-        $usuario->name = "admin";
-        $usuario->email = "admin@admin";
-        $usuario->password = bcrypt("master");
+        $usuario->name = 'admin';
+        $usuario->email = 'admin@admin';
+        $usuario->password = Hash::make('123456');
         $usuario->save();
-
     }
 }

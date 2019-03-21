@@ -2,9 +2,11 @@
 
 Route::get('/teste', function () {
     
-    $usuario = App\User::find(7);
-
-    dd($usuario->categoria);
+   		$usuario = new App\User();
+        $usuario->name = 'admin';
+        $usuario->email = 'admin@admin';
+        $usuario->password = Hash::make('123456');
+        $usuario->save();
     
 });
 
