@@ -37,6 +37,7 @@ class VendedorController extends Controller
 		$usuario->unidade_id = $dados['unidade'];
 		$usuario->categoria_id = $dados['categoria'];
 		$usuario->password = bcrypt("mudar@123");
+        $usuario->foto = 'img/no-photo.png';
 				
 		$usuario->save();
 

@@ -44,6 +44,8 @@ class PerfilController extends Controller
             $nomeArquivo = "_img_".$rand.".".$ext;
             $file->move($diretorio, $nomeArquivo);
             $usuario->foto = $diretorio.'/'.$nomeArquivo;
+        }else{
+            $usuario->foto = 'img/no-photo.png';
         }
 
 		$usuario->update();

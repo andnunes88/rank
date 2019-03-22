@@ -5,7 +5,7 @@ Route::get('/teste', function () {
    		$usuario = new App\User();
         $usuario->name = 'admin';
         $usuario->email = 'admin@admin';
-        $usuario->password = Hash::make('123456');
+        $usuario->password = Hash::make('master');
         $usuario->save();
     
 });

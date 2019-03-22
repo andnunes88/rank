@@ -43,7 +43,7 @@
 
                  <div class="form-group">
                      <label>Nova Senha </label>
-                     <input type="password" name="senha" class="form-control" value="">                     
+                     <input type="password" name="senha" class="form-control" required>                     
                  </div>                    			
 
             </div>
