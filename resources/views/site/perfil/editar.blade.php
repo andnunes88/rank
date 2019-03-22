@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<style>
+    .error{
+        color: red;
+    }
+</style>
+
 @section('content') 
 
 <!-- Content Wrapper. Contains page content -->
@@ -19,11 +25,11 @@
 	<!-- Main content -->
 	<section class="content">      
 
-    <form action="{{route('perfil.atualizar', $usuario->id)}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('perfil.atualizar', $usuario->id)}}" method="post" enctype="multipart/form-data" id="form-perfil">
 
         {{ csrf_field() }}
 
-         {{ method_field('PUT') }}
+        {{ method_field('PUT') }}
 
         <div class="box box-danger">
             <div class="box-header">
@@ -43,7 +49,7 @@
 
                  <div class="form-group">
                      <label>Nova Senha </label>
-                     <input type="password" name="senha" class="form-control" required>                     
+                     <input type="password" name="senha" class="form-control">                     
                  </div>                    			
 
             </div>
@@ -85,7 +91,7 @@
             <div class="form-group">
                   <label>Uma Frase que te inspira</label>
                   <textarea name="frase" class="form-control" rows="3" placeholder="Digite uma frase que te inspira"></textarea>
-                </div>
+            </div>
             <!-- /.form frase -->
 
             </div>
@@ -105,4 +111,13 @@
 <!-- /.content-wrapper -->
 
 @endsection
+
+@push('js')
+    
+    <!-- perfil JS -->        
+    <script src="{{ asset('dist/plugins/jquery-validate/jquery.validate.min.js') }}"></script> 
+    <!-- perfil JS -->      
+    <script src="{{ asset('js/perfil.js') }}"></script>    
+
+@endpush
 
