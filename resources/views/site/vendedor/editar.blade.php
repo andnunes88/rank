@@ -7,12 +7,11 @@
 
 	<section class="content-header">
 		<h1>
-			Editar vendedor
-			
+			Editar Usuário			
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-			<li class="active">Vendedor</li>
+			<li class="active">Usuário</li>
 		</ol>
 	</section>
 
@@ -39,10 +38,16 @@
                      <input type="text" name="cpf" class="form-control" placeholder="Nome ..." value="{{$vendedor->cpf}}">
                  </div>
 
-                  <div class="form-group">
-                     <label>Senha Padrão </label>
-                     <input type="text" name="senha" class="form-control" placeholder="mudar@123">
-                 </div>               
+                <!-- Tipo -->
+                <div class="form-group">
+                      <label>Tipo de usuário</label>
+                      <select class="form-control" name="tipo">                        
+                            <option value="">Escolher Tipo</option>                        
+                            <option value="vendedor">Gerente</option>                 
+                            <option value="gerente">Vendedor</option>                                    
+                      </select>
+                </div>
+                <!-- /.tipo group -->              
 
                 <!-- Unidade -->
                 <div class="form-group">

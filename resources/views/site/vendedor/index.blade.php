@@ -6,7 +6,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Vendedores registrados
+      Usuários registrados
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Início</a></li>
@@ -29,14 +29,16 @@
             <th>Nome</th>
             <th>Unidade</th>
             <th>Categoria</th>
+            <th>Tipo</th>
             <th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
           </tr>
 
             @foreach($usuarios as $usuario)           
               <tr>
                 <td>{{$usuario->name}}</td>
-                <td>{{$usuario->unidade->uni_nome}}</td>
-                <td>{{$usuario->categoria->cat_nome}}</td>
+                <td>{{isset($usuario->unidade) ? $usuario->unidade->uni_nome: ""}}</td>
+                <td>{{isset($usuario->categoria) ? $usuario->categoria->cat_nome: "" }}</td>
+                <td>{{$usuario->tipo}}</td>
                 <td style="text-align: center">
                   <a href="{{route('vendedor.editar', $usuario->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
                   <a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('vendedor.excluir', $usuario->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>

@@ -39,10 +39,17 @@
                      <input type="text" name="cpf" class="form-control" placeholder="Nome ...">
                  </div>
 
-                  <div class="form-group">
-                     <label>Senha Padrão </label>
-                     <input type="text" name="senha" class="form-control" placeholder="mudar@123">
-                 </div>               
+                <!-- Tipo -->
+                <div class="form-group">
+                      <label>Tipo de usuário</label>
+                      <select class="form-control" name="tipo">
+                        <option value="">Escolher Tipo</option>                        
+                            <option value="vendedor">Gerente</option>                 
+                            <option value="gerente">Vendedor</option>                 
+                       
+                      </select>
+                </div>
+                <!-- /.tipo group -->               
 
                 <!-- Unidade -->
                 <div class="form-group">

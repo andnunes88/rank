@@ -12,9 +12,9 @@ class VendedorController extends Controller
     //
     public function index(){
 
-        $usuarios = User::where('tipo', 'vendedor')->get();
-
-    	return view('site.vendedor.index', compact('usuarios'));
+        $usuarios = User::all();
+       
+       	return view('site.vendedor.index', compact('usuarios'));
     }
 
     public function cadastrarVendedor(){
@@ -33,6 +33,7 @@ class VendedorController extends Controller
     	
     	$usuario->name = $dados['nome'];
 		$usuario->cpf = $dados['cpf'];
+        $usuario->tipo = $dados['tipo'];
 		$usuario->unidade_id = $dados['unidade'];
 		$usuario->categoria_id = $dados['categoria'];
 		$usuario->password = bcrypt("mudar@123");

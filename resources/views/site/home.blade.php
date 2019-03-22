@@ -59,7 +59,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Lista</span>
-              <span class="info-box-number">Vendedores</span>
+              <span class="info-box-number">Usuários</span>
             </div>
             <!-- /.info-box-content -->
             </a>
