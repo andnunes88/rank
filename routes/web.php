@@ -24,10 +24,14 @@ Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('/perfil/novo', 'PerfilController@cadastrarPerfil')->name('perfil.cadastrar');
 Route::post('/perfil/salvar/', 'PerfilController@salvarPerfil')->name('perfil.salvar');
 
+
 # Vendedores 
 Route::get('/vendedores', 'VendedorController@index')->name('vendedores');
 Route::get('/vendedor/novo', 'VendedorController@cadastrarVendedor')->name('vendedor.cadastrar');
 Route::post('/vendedor/salvar/', 'VendedorController@salvarVendedor')->name('vendedor.salvar');
+Route::get('/vendedor/editar/{id_vendedor}', 'VendedorController@editarVendedor')->name('vendedor.editar');
+Route::put('/vendedor/atualizar/{id_vendedor}', 'VendedorController@atualizarVendedor')->name('vendedor.atualizar');
+Route::get('/vendedor/excluir/{id_vendedor}', 'VendedorController@excluirVendedor')->name('vendedor.excluir');
 
 #Unidades
 Route::get('/unidades', 'UnidadeController@index')->name('unidades');

@@ -38,14 +38,12 @@
                 <td>{{$usuario->unidade->uni_nome}}</td>
                 <td>{{$usuario->categoria->cat_nome}}</td>
                 <td style="text-align: center">
-                  <a href="#"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
-                  <a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '#' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>
+                  <a href="{{route('vendedor.editar', $usuario->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
+                  <a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('vendedor.excluir', $usuario->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>
                 </td>
               </tr>
             @endforeach
-
-
-
+            
         </tbody>
       </table>
     </div>

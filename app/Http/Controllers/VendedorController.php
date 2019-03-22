@@ -45,4 +45,45 @@ class VendedorController extends Controller
         return redirect()->route('vendedores');
 
     }
+
+    public function editarVendedor($id_vendedor){
+        
+        $categorias = Categoria::all();
+        $unidades = Unidade::all();
+        $vendedor = User::find($id_vendedor);        
+      
+        return view('site.vendedor.editar', compact('categorias', 'unidades', 'vendedor'));     
+    }    
+
+    public function atualizarVendedor(Request $request, $id_vendedor){        
+
+        $dados = $request->all();
+        
+        $usuario = User::find($id_vendedor);
+
+        $usuario->name = $dados['nome'];
+        $usuario->cpf = $dados['cpf'];
+        $usuario->unidade_id = $dados['unidade'];
+        $usuario->categoria_id = $dados['categoria'];
+        $usuario->password = bcrypt("mudar@123");
+        $usuario->tipo = 'vendedor';
+        
+        $usuario->update();
+       
+        \Session::flash('mensagem',['msg'=>'Vendedor atualizado com sucesso!','class'=>'alert alert-success']);
+
+        return redirect()->route('vendedores');
+       
+    }
+
+    public function excluirVendedor($id_vendedor){
+        
+        $usuario = User::find($id_vendedor);
+
+        $usuario->delete();
+
+        \Session::flash('mensagem',['msg'=>'Vendedor Excluido com sucesso!','class'=>'alert alert-success']);
+
+        return redirect()->route('vendedores');
+    }
 }
