@@ -16,7 +16,13 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">      
+    <section class="content"> 
+
+          
+          <div class="box-title">
+            <button class="btn btn-success">editar</button>
+          </div> <br>         
+       
 
           <!-- Profile Image -->
           <div class="box box-primary">

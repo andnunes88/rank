@@ -26,6 +26,7 @@
         	<div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
+            <a href="{{route('ranking')}}">
             <span class="info-box-icon bg-aqua"><i class="fa fa-trophy"></i></span>
 
             <div class="info-box-content">
@@ -33,6 +34,7 @@
               <span class="info-box-number">Geral</span>
             </div>
             <!-- /.info-box-content -->
+            </a>
           </div>
           <!-- /.info-box -->
         </div>

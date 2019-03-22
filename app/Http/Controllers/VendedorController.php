@@ -37,8 +37,7 @@ class VendedorController extends Controller
 		$usuario->unidade_id = $dados['unidade'];
 		$usuario->categoria_id = $dados['categoria'];
 		$usuario->password = bcrypt("mudar@123");
-		$usuario->tipo = 'vendedor';
-		
+				
 		$usuario->save();
 
 		\Session::flash('mensagem',['msg'=>'Novo Vendedor cadastrado com sucesso!','class'=>'alert alert-success']);
@@ -64,11 +63,11 @@ class VendedorController extends Controller
 
         $usuario->name = $dados['nome'];
         $usuario->cpf = $dados['cpf'];
+        $usuario->tipo = $dados['tipo'];
         $usuario->unidade_id = $dados['unidade'];
         $usuario->categoria_id = $dados['categoria'];
         $usuario->password = bcrypt("mudar@123");
-        $usuario->tipo = 'vendedor';
-        
+                
         $usuario->update();
        
         \Session::flash('mensagem',['msg'=>'Vendedor atualizado com sucesso!','class'=>'alert alert-success']);

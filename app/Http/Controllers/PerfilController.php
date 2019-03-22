@@ -6,44 +6,52 @@ use Illuminate\Http\Request;
 use App\Categoria;
 use App\Unidade;
 use App\User;
+use Auth;
 
 class PerfilController extends Controller
-{
-    //
-    public function index(){
-    	return view('site.perfil.index');
-    }
+{   
+    
 
-    public function cadastrarPerfil(){
+    public function index(){
+
+        $id_usuario = Auth::user()->id;
+
+        $usuario = User::find($id_usuario);
 
     	$categorias = Categoria::all();
     	$unidades =	Unidade::all();
 
-    	return view('site.perfil.cadastrar', compact('categorias', 'unidades')); 
+    	return view('site.perfil.editar', compact('usuario', 'categorias', 'unidades')); 
     }
 
-    public function salvarPerfil(Request $request){
+    public function atualizarPerfil(Request $request, $id_usuario){
 
     	$dados = $request->all();
+    	        
+    	$usuario = User::find($id_usuario);       
     	
-    	$usuario = New User();
-    	
-    	$usuario->name = "Anderson Albuquerque";
-		$usuario->cpf = "122.291.467-00";
-		$usuario->unidade = "2";
-		$usuario->categoria = "1";
-		$usuario->password = bcrypt("mudar@123");
+    	$usuario->name = $dados['nome'];
+		$usuario->cpf = $dados['cpf'];
+		$usuario->password = bcrypt( $dados['senha'] );		
+        $usuario->telefone = $dados['telefone'];
+        $usuario->frase = $dados['frase'];
+
+        $file = $request->file('imagem');        
+        if($file){
+            $rand = rand(11111,99999);
+            $diretorio = "img/perfil/".$id_usuario."/";
+            $ext = $file->guessClientExtension();
+            $nomeArquivo = "_img_".$rand.".".$ext;
+            $file->move($diretorio, $nomeArquivo);
+            $usuario->foto = $diretorio.'/'.$nomeArquivo;
+        }
+
+		$usuario->update();
+
+		\Session::flash('mensagem',['msg'=>'Perfil atualizado com sucesso!','class'=>'alert alert-success']);
+
+        return redirect()->route('perfil');
+
 		
-		$usuario->save();
-
-		\Session::flash('mensagem',['msg'=>'Novo cadastro realizado com sucesso!','class'=>'alert alert-success']);
-
-        return redirect()->route('unidades');
-
-		//$usuario->foto = "aaa";
-		//$usuario->data = "2019-03-19";
-		//$usuario->telefone = "2197443082";
-		//$usuario->frase = "aaa";
-
     }
 }

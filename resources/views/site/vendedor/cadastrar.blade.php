@@ -44,8 +44,8 @@
                       <label>Tipo de usuário</label>
                       <select class="form-control" name="tipo">
                         <option value="">Escolher Tipo</option>                        
-                            <option value="vendedor">Gerente</option>                 
-                            <option value="gerente">Vendedor</option>                 
+                        <option value="gerente">Gerente</option>                 
+                        <option value="vendedor">Vendedor</option>                 
                        
                       </select>
                 </div>

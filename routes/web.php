@@ -23,15 +23,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('/perfil/novo', 'PerfilController@cadastrarPerfil')->name('perfil.cadastrar');
 Route::post('/perfil/salvar/', 'PerfilController@salvarPerfil')->name('perfil.salvar');
+Route::put('/perfil/atualizar/{id_usuario}', 'PerfilController@atualizarPerfil')->name('perfil.atualizar');
 
 
 # Vendedores 
-Route::get('/vendedores', 'VendedorController@index')->name('vendedores');
-Route::get('/vendedor/novo', 'VendedorController@cadastrarVendedor')->name('vendedor.cadastrar');
-Route::post('/vendedor/salvar/', 'VendedorController@salvarVendedor')->name('vendedor.salvar');
-Route::get('/vendedor/editar/{id_vendedor}', 'VendedorController@editarVendedor')->name('vendedor.editar');
-Route::put('/vendedor/atualizar/{id_vendedor}', 'VendedorController@atualizarVendedor')->name('vendedor.atualizar');
-Route::get('/vendedor/excluir/{id_vendedor}', 'VendedorController@excluirVendedor')->name('vendedor.excluir');
+Route::get('/usuarios', 'VendedorController@index')->name('vendedores');
+Route::get('/usuario/novo', 'VendedorController@cadastrarVendedor')->name('vendedor.cadastrar');
+Route::post('/usuario/salvar/', 'VendedorController@salvarVendedor')->name('vendedor.salvar');
+Route::get('/usuario/editar/{id_vendedor}', 'VendedorController@editarVendedor')->name('vendedor.editar');
+Route::put('/usuario/atualizar/{id_vendedor}', 'VendedorController@atualizarVendedor')->name('vendedor.atualizar');
+Route::get('/usuario/excluir/{id_vendedor}', 'VendedorController@excluirVendedor')->name('vendedor.excluir');
 
 #Unidades
 Route::get('/unidades', 'UnidadeController@index')->name('unidades');
