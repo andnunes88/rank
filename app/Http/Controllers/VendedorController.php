@@ -32,7 +32,7 @@ class VendedorController extends Controller
     	$usuario = New User();
     	
     	$usuario->name = $dados['nome'];
-		$usuario->cpf = $dados['cpf'];
+		$usuario->email = $dados['email'];
         $usuario->tipo = $dados['tipo'];
 		$usuario->unidade_id = $dados['unidade'];
 		$usuario->categoria_id = $dados['categoria'];
@@ -63,7 +63,7 @@ class VendedorController extends Controller
         $usuario = User::find($id_vendedor);
 
         $usuario->name = $dados['nome'];
-        $usuario->cpf = $dados['cpf'];
+        $usuario->email = $dados['email'];
         $usuario->tipo = $dados['tipo'];
         $usuario->unidade_id = $dados['unidade'];
         $usuario->categoria_id = $dados['categoria'];

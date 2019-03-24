@@ -31,12 +31,12 @@
 
                  <div class="form-group">
                      <label>Nome </label>
-                     <input type="text" name="nome" class="form-control" placeholder="Nome ...">
+                     <input type="text" name="nome" class="form-control" placeholder="Nome ..." required>
                  </div>
 
                  <div class="form-group">
-                     <label>CPF </label>
-                     <input type="text" name="cpf" class="form-control" placeholder="Nome ...">
+                     <label>E-mail </label>
+                     <input type="text" name="email" class="form-control" placeholder="Email ..." required>
                  </div>
 
                 <!-- Tipo -->

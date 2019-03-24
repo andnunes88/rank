@@ -32,7 +32,7 @@
       {{ csrf_field() }}
 
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="CPF" name="email">
+        <input type="email" class="form-control" placeholder="E-mail" name="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
