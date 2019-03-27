@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->foreign('unidade_id')->references('id')->on('unidades');
             $table->string('name');
             $table->string('password');
-            $table->string('email')->nullable();
-            $table->string('cpf')->unique()->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('cpf')->nullable();
             $table->string('telefone')->nullable();
             $table->string('frase')->nullable();
             $table->string('tipo')->nullable();

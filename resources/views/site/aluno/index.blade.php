@@ -29,6 +29,7 @@
             <tr>
               <th>Nome</th>
               <th>Telefone</th>
+              <th>E-mail</th>
               <th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
             </tr> 
 
@@ -36,6 +37,7 @@
               <tr>
                 <td>{{$aluno->alu_nome}}</td>
                 <td>{{$aluno->alu_telefone}}</td>
+                <td>{{$aluno->alu_email}}</td>
                 <td style="text-align: center">
                   <a href="{{route('aluno.editar', $aluno->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
                   <a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('aluno.excluir', $aluno->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>

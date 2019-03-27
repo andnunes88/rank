@@ -2,11 +2,11 @@
 
 Route::get('/teste', function () {
     
-   		$usuario = new App\User();
-        $usuario->name = 'admin';
-        $usuario->email = 'admin@admin';
-        $usuario->password = Hash::make('master');
-        $usuario->save();
+	$usuario = new App\User();
+    $usuario->name = 'admin';
+    $usuario->email = 'admin@admin';
+    $usuario->password = Hash::make('master');
+    $usuario->save();
     
 });
 
@@ -33,7 +33,15 @@ Route::get('/curso/editar/{id_curso}', 'CursoController@editarCurso')->name('cur
 Route::put('/curso/atualizar/{id_curso}', 'CursoController@atualizarCurso')->name('curso.atualizar');
 Route::get('/curso/excluir/{id_curso}', 'CursoController@excluirCurso')->name('curso.excluir');
 
-#Cursos
+# Vendas
+Route::get('/vendas', 'vendaController@index')->name('vendas');
+Route::get('/venda/novo', 'vendaController@cadastrarVenda')->name('venda.cadastrar');
+Route::post('/venda/salvar/', 'vendaController@salvarVenda')->name('venda.salvar');
+Route::get('/venda/editar/{id_curso}', 'vendaController@editarVenda')->name('venda.editar');
+Route::put('/venda/atualizar/{id_curso}', 'vendaController@atualizarVenda')->name('venda.atualizar');
+Route::get('/venda/excluir/{id_curso}', 'vendaController@excluirVenda')->name('venda.excluir');
+
+# Alunos
 Route::get('/alunos', 'AlunoController@index')->name('alunos');
 Route::get('/aluno/novo', 'AlunoController@cadastrarAluno')->name('aluno.cadastrar');
 Route::post('/aluno/salvar/', 'AlunoController@salvarAluno')->name('aluno.salvar');

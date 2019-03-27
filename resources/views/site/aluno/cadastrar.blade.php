@@ -33,17 +33,17 @@
 
                     <div class="form-group">
                       <label>CPF</label>
-                      <input type="text" name="aluno_cpf" class="form-control" placeholder="Valor do aluno">
+                      <input type="text" name="aluno_cpf" class="form-control" placeholder="CPF do aluno">
                     </div>
 
                     <div class="form-group">
                       <label>Telefone</label>
-                      <input type="text" name="aluno_telefone" class="form-control" placeholder="Valor do aluno">
+                      <input type="text" name="aluno_telefone" class="form-control" placeholder="Telefone do aluno">
                     </div>
 
                     <div class="form-group">
                       <label>E-Mail</label>
-                      <input type="text" name="aluno_email" class="form-control" placeholder="Valor do aluno">
+                      <input type="text" name="aluno_email" class="form-control" placeholder="Email do aluno">
                     </div>               
 
                 </div>
