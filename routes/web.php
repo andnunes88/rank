@@ -25,6 +25,21 @@ Route::get('/perfil/novo', 'PerfilController@cadastrarPerfil')->name('perfil.cad
 Route::post('/perfil/salvar/', 'PerfilController@salvarPerfil')->name('perfil.salvar');
 Route::put('/perfil/atualizar/{id_usuario}', 'PerfilController@atualizarPerfil')->name('perfil.atualizar');
 
+#Cursos
+Route::get('/cursos', 'CursoController@index')->name('cursos');
+Route::get('/curso/novo', 'CursoController@cadastrarCurso')->name('curso.cadastrar');
+Route::post('/curso/salvar/', 'CursoController@salvarCurso')->name('curso.salvar');
+Route::get('/curso/editar/{id_curso}', 'CursoController@editarCurso')->name('curso.editar');
+Route::put('/curso/atualizar/{id_curso}', 'CursoController@atualizarCurso')->name('curso.atualizar');
+Route::get('/curso/excluir/{id_curso}', 'CursoController@excluirCurso')->name('curso.excluir');
+
+#Cursos
+Route::get('/alunos', 'AlunoController@index')->name('alunos');
+Route::get('/aluno/novo', 'AlunoController@cadastrarAluno')->name('aluno.cadastrar');
+Route::post('/aluno/salvar/', 'AlunoController@salvarAluno')->name('aluno.salvar');
+Route::get('/aluno/editar/{id_curso}', 'AlunoController@editarAluno')->name('aluno.editar');
+Route::put('/aluno/atualizar/{id_curso}', 'AlunoController@atualizarAluno')->name('aluno.atualizar');
+Route::get('/aluno/excluir/{id_curso}', 'AlunoController@excluirAluno')->name('aluno.excluir');
 
 # Vendedores 
 Route::get('/usuarios', 'VendedorController@index')->name('vendedores');

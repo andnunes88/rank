@@ -142,6 +142,8 @@ desired effect
         <li><a href="{{route('unidades')}}"><i class="fa fa-university"></i> <span>Unidades</span></a></li>
         <li><a href="{{route('categorias')}}"><i class="fa fa-th"></i> <span>Categorias</span></a></li>
         <li><a href="{{route('temporadas')}}"><i class="fa fa-link"></i> <span>Temporadas</span></a></li>
+        <li><a href="{{route('cursos')}}"><i class="fa fa-link"></i> <span>Cursos</span></a></li>
+        <li><a href="{{route('alunos')}}"><i class="fa fa-link"></i> <span>Alunos</span></a></li>
         
         <li class="treeview">
           <a href="#"><i class="fa fa-shopping-bag"></i> <span>Vendas</span>
