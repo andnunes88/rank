@@ -15,12 +15,14 @@ class CreateVendasTable extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ven_vendedor')->nullable();
-            $table->string('ven_vendedor')->nullable();
+            $table->string('ven_vendedor_id')->nullable();
+            $table->string('ven_vendedor_nome')->nullable();
             $table->string('ven_aluno')->nullable();
-            $table->string('ven_curso')->nullable();
-            $table->string('ven_valor')->nullable();
-            $table->date('ven_data')->nullable();
+            $table->string('ven_telefone')->nullable();
+            $table->string('ven_email')->nullable();
+            $table->decimal('ven_valor', 8, 2)->nullable();
+            $table->dateTime('ven_data')->nullable();
+            $table->string('ven_status')->nullable();
             $table->timestamps();
         });
     }

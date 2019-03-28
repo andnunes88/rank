@@ -41,13 +41,13 @@
                  <div class="form-group">
                      <label>E-mail </label>
                      <input type="email" name="aluno_email" class="form-control" placeholder="E-mail do aluno" required>
-                 </div> 
+                 </div>           
 
-                 <div class="form-group">
-                     <label>Valor </label>
-                     <input type="text" name="aluno_valor" class="form-control" placeholder="Total da venda" required>
-                 </div>
-
+                <div class="input-group">
+                    <span class="input-group-addon">R$</span>
+                    <input type="text" class="form-control" name="aluno_valor" placeholder="Preço da venda" required>
+                    <span class="input-group-addon">.00</span>
+                </div>
 
             </div>
             <!-- /.box-body -->
@@ -55,7 +55,7 @@
         <!-- /.box -->      
 
         <!-- botão salvar -->
-        <button type="submit" class="btn btn-block btn-primary btn-flat">Salvar</button>        	
+        <button type="submit" class="btn btn-block btn-primary btn-flat">Registrar Venda</button>        	
         <!-- /.botão salvar -->
 
     </form>  

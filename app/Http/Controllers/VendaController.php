@@ -11,7 +11,9 @@ class VendaController extends Controller
 {
     public function index(){
     	
-    	$vendas = Venda::all();
+        $id_usuario_logado = Auth::user()->id;
+
+    	$vendas = Venda::where('ven_vendedor_id', $id_usuario_logado)->get();
 
     	return view('site.venda.index', compact('vendas'));
     }

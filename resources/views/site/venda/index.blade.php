@@ -36,7 +36,7 @@
 						@foreach($vendas as $venda)           
 							<tr>
 								<td>{{$venda->ven_aluno}}</td>
-								<td>{{$venda->ven_data}}</td>
+								<td>{{ date('d/m/Y H:m:s', strtotime($venda->ven_data)) }}</td>
 								<td>R$ {{number_format($venda->ven_valor,2,",",".")}}</td>
 								<td style="text-align: center">
 									<a href="{{route('venda.editar', $venda->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
