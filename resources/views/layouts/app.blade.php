@@ -144,17 +144,9 @@ desired effect
         <li><a href="{{route('temporadas')}}"><i class="fa fa-link"></i> <span>Temporadas</span></a></li>
         <li><a href="{{route('cursos')}}"><i class="fa fa-link"></i> <span>Cursos</span></a></li>
         <li><a href="{{route('alunos')}}"><i class="fa fa-link"></i> <span>Alunos</span></a></li>
+        <li><a href="{{route('vendas')}}"><i class="fa fa-link"></i> <span>Vendas</span></a></li>
         
-        <li class="treeview">
-          <a href="#"><i class="fa fa-shopping-bag"></i> <span>Vendas</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Registrar Vendas</a></li>            
-          </ul>
-        </li>
+
       </ul>
       <!-- /.sidebar-menu -->
     </section>

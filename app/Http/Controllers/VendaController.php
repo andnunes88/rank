@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Venda;
+use Auth;
+use App\User;
 
 class VendaController extends Controller
 {
@@ -21,9 +23,19 @@ class VendaController extends Controller
 
     public function salvarVenda(Request $request){
 
+        $id_usuario_logado = Auth::user()->id;
+
+        $vendedor = User::find($id_usuario_logado);      
+
     	$dados = $request->all();
     	$venda = new Venda;
-    	$venda->cat_nome = $dados['venda_nome'];
+    	$venda->ven_vendedor_id = $vendedor->id;
+        $venda->ven_vendedor_nome = $vendedor->name;
+        $venda->ven_aluno = $dados['aluno_nome'];
+        $venda->ven_telefone = $dados['aluno_telefone'];
+        $venda->ven_email = $dados['aluno_email'];        
+        $venda->ven_valor = $dados['aluno_valor'];        
+        $venda->ven_data = new \DateTime();        
     	$venda->save();
 
         \Session::flash('mensagem',['msg'=>'venda cadastrada com sucesso!','class'=>'alert alert-success']);
@@ -38,12 +50,15 @@ class VendaController extends Controller
         return view('site.venda.editar', compact('venda'));     
     }    
 
-    public function atualizarvenda(Request $request, $id_venda){        
+    public function atualizarVenda(Request $request, $id_venda){        
 
         $dados = $request->all();
 
         $venda = Venda::where('id',$id_venda)->first();   
-        $venda->cat_nome = $dados['venda_nome'];
+        $venda->ven_aluno = $dados['aluno_nome'];
+        $venda->ven_telefone = $dados['aluno_telefone'];
+        $venda->ven_email = $dados['aluno_email'];        
+        $venda->ven_valor = $dados['aluno_valor']; 
         $venda->update();
        
         \Session::flash('mensagem',['msg'=>'venda atualizada com sucesso!','class'=>'alert alert-success']);

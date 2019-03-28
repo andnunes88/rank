@@ -29,7 +29,7 @@
 						<tr>
 							<th>Cliente</th>
 							<th>Data</th>
-							<th>Total</th>
+							<th>Valor</th>
 							<th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
 						</tr> 
 
@@ -37,7 +37,7 @@
 							<tr>
 								<td>{{$venda->ven_aluno}}</td>
 								<td>{{$venda->ven_data}}</td>
-								<td>{{$venda->ven_valor}}</td>
+								<td>R$ {{number_format($venda->ven_valor,2,",",".")}}</td>
 								<td style="text-align: center">
 									<a href="{{route('venda.editar', $venda->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
 									<a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('venda.excluir', $venda->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>

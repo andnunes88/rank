@@ -42,6 +42,7 @@
             
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
+                <a href="{{route('vendas')}}">
                 <span class="info-box-icon bg-yellow"><i class="fa fa-shopping-bag"></i></span>
 
                 <div class="info-box-content">
@@ -49,6 +50,7 @@
                   <span class="info-box-number">Venda</span>
                 </div>
                 <!-- /.info-box-content -->
+                </a>
               </div>
               <!-- /.info-box -->
             </div>
