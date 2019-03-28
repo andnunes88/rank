@@ -27,65 +27,45 @@
 	<section class="content container-fluid">
 
 		<div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Vendedores </h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-condensed">
-                <tbody><tr>
-                  <th style="width: 10px">Posição</th>
-                  <th>Nome</th>
-                  <th>Meta</th>
-                  <th style="width: 40px">%</th>
-                </tr>
+      <div class="box-header">
+        <h3 class="box-title">Vendedores </h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body no-padding">
+        <table class="table table-condensed">
+          <tbody><tr>
+            <th style="width: 10px">Posição</th>
+            <th>Nome</th>
+            <th>Meta</th>
+            <th style="width: 40px">%</th>
+          </tr>
 
-                <tr>
-                  <td>1.</td>
-                  <td>
-					<img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
-                  Ciclano</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar bg-light-blue" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">70%</span></td>
-                </tr>
+          @foreach($vendas as $venda) 
 
-                <tr>
-                  <td>2.</td>
-                  <td>
-					<img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
-                  Fulano</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar bg-light-blue" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">55%</span></td>
-                </tr>
+          <tr>
+            <td>1.</td>
+            <td>
+              <img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
+              {{$venda->ven_vendedor_nome}}
+            </td>
+            <td>
+              <div class="progress progress-xs progress-striped active">
+                <div class="progress-bar bg-light-blue" style="width: 70%"></div>
+              </div>
+            </td>
+            <td><span class="badge bg-light-blue">{{$venda->total_vendas}}</span></td>
+          </tr>
 
-                <tr>
-                  <td>3.</td>
-                  <td>
-					<img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
-                  Beltrano</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
+          @endforeach        
 
-              </tbody></table>
-            </div>
-            <!-- /.box-body -->
-          </div>
 
-    </section>
-    <!-- /.content -->
+        </tbody></table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+  </section>
+  <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
