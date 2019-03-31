@@ -14,7 +14,7 @@
 
 	<section class="content-header">
 		<h1>
-			Ranking Geral
+			Ranking 
 			
 		</h1>
 		<ol class="breadcrumb">
@@ -29,37 +29,56 @@
 		<div class="box">
       <div class="box-header">
         <h3 class="box-title">Vendedores </h3>
+
+        <select id="select-categoria">
+          <option value="">Categoria</option>
+
+          @foreach($categorias as $categoria)
+            <option value="{{$categoria->id}}">{{$categoria->cat_nome}}</option>
+          @endforeach
+
+        </select>
+
       </div>
       <!-- /.box-header -->
       <div class="box-body no-padding">
         <table class="table table-condensed">
-          <tbody><tr>
-            <th style="width: 10px">Posição</th>
-            <th>Nome</th>
-            <th>Meta</th>
-            <th style="width: 40px">%</th>
-          </tr>
+          
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Meta</th>
+                <th style="width: 40px">Vendas</th>
+                
+              </tr>
+            </thead>
 
-          @foreach($vendas as $venda) 
+            <tbody id="lista-vendedores">
 
-          <tr>
-            <td>1.</td>
-            <td>
-              <img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
-              {{$venda->ven_vendedor_nome}}
-            </td>
-            <td>
-              <div class="progress progress-xs progress-striped active">
-                <div class="progress-bar bg-light-blue" style="width: 70%"></div>
-              </div>
-            </td>
-            <td><span class="badge bg-light-blue">{{$venda->total_vendas}}</span></td>
-          </tr>
+            @foreach($vendas as $venda) 
 
-          @endforeach        
+              <tr>                
+                <td>
+                  <img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
+                  {{$venda->ven_vendedor_nome}}
+                </td>
+                <td>
+                  <div class="progress progress-xs progress-striped active">
+                    <div class="progress-bar bg-light-blue" style="width: 70%"></div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light-blue">{{$venda->total_vendas}}</span></td>
+                <td>
+                  
+                    <span class="badge bg-light-blue"></span>
+                  
+                </td>            
+              </tr>
 
+            @endforeach
 
-        </tbody></table>
+          </tbody>
+        </table>
       </div>
       <!-- /.box-body -->
     </div>
@@ -70,3 +89,10 @@
 <!-- /.content-wrapper -->
 
 @endsection
+
+@push('js')
+    
+    <!-- ranking JS -->      
+    <script src="{{ asset('js/ranking.js') }}"></script>    
+
+@endpush

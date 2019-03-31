@@ -1,12 +1,16 @@
 <?php
 
 Route::get('/teste', function () {
-    
+    /*
 	$usuario = new App\User();
     $usuario->name = 'admin';
     $usuario->email = 'admin@admin';
     $usuario->password = Hash::make('master');
-    $usuario->save();
+    $usuario->save();*/
+
+    $venda = App\Venda::where('id', 3)->first();
+   
+  	dd($venda->usuario->meta_mensal);
     
 });
 
@@ -83,5 +87,7 @@ Route::get('/temporada/excluir/{id_categoria}', 'TemporadaController@excluirTemp
 
 #ranking
 Route::get('/ranking', 'RankingController@index')->name('ranking');
+Route::get('/ranking-json/{id_categoria?}', 'RankingController@pegarTodasVendasJson')->name('ranking-json');
+Route::get('/meta', 'RankingController@calculaMeta')->name('meta');
 
 Route::get('/sair', 'HomeController@sair')->name('sair');

@@ -34,4 +34,9 @@ class User extends Authenticatable
     public function unidade(){
         return $this->belongsTo('App\Unidade');
     }
+
+    public function venda()
+    {
+        return $this->hasMany('App\Venda', 'ven_vendedor_id', 'id');
+    }
 }
