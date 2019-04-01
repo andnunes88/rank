@@ -1,19 +1,16 @@
 $(function(){
 
 	$("#select-categoria").change(function(){
-
 		
 		listaVendedores();
 
 	});
 
-
 	function listaVendedores(){
 
 			var retorno = "";
 			var i = 0;
-			var id_categoria = $('#select-categoria').val();
-			
+			var id_categoria = $('#select-categoria').val();			
 
 			$.ajax({
 			url: "ranking-json/" + id_categoria,
@@ -40,7 +37,7 @@ $(function(){
 					retorno += "<td>";
 					retorno += "</td></tr>";
 					i++;
-					//console.log(data[key].disciplina);
+					//console.log(data[key]);
 				});
 				
 				$("#lista-vendedores").html(retorno);

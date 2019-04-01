@@ -46,6 +46,7 @@
           
             <thead>
               <tr>
+                <th>Posição</th>
                 <th>Nome</th>
                 <th>Meta</th>
                 <th style="width: 40px">Vendas</th>
@@ -55,9 +56,14 @@
 
             <tbody id="lista-vendedores">
 
-            @foreach($vendas as $venda) 
+              @php
+                $posicao = 1;
+              @endphp
 
-              <tr>                
+            @foreach($vendas as $venda) 
+            
+              <tr> 
+                <td>{{$posicao}} º</td>               
                 <td>
                   <img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
                   {{$venda->ven_vendedor_nome}}
@@ -74,6 +80,10 @@
                   
                 </td>            
               </tr>
+
+              @php
+                $posicao++;
+              @endphp
 
             @endforeach
 
