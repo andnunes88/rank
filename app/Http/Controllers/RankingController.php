@@ -39,7 +39,8 @@ class RankingController extends Controller
         if($id_categoria != null){
 
             return $vendas = DB::table('vendas')
-                ->select('*', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->select('users.name', 'users.foto' , 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->join('users', 'users.id', 'vendas.ven_vendedor_id')
                 ->Where('ven_categoria_id', $id_categoria)
                 ->groupBy('ven_vendedor_id')
                 ->orderBy('total_vendas', 'DESC')
@@ -48,7 +49,8 @@ class RankingController extends Controller
         }else{
 
             return $vendas = DB::table('vendas')
-                ->select('*', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->select('users.name', 'users.foto' , 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->join('users', 'users.id', 'vendas.ven_vendedor_id')
                 ->groupBy('ven_vendedor_id')
                 ->orderBy('total_vendas', 'DESC')
                 ->get();
@@ -56,14 +58,5 @@ class RankingController extends Controller
         }
 
     }
-
-    public function calculaMeta(){
-        return $vendas = DB::table('vendas')
-                ->select(DB::raw('SUM((ven_valor / meta_mensal) * 100) as percentual_meta'))
-                ->join('users', 'users.id', '=', 'ven_vendedor_id')
-                ->groupBy('ven_vendedor_id')
-                ->get(); 
-    }
-
 
 }
