@@ -22,11 +22,15 @@ class RankingController extends Controller
 
     public function pegarTodasVendas(){
     	
-        return $vendas = DB::table('vendas')
-    		->select('*', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
-    		->groupBy('ven_vendedor_id')
-    		->orderBy('total_vendas', 'DESC')
-    		->get();      
+        $vendas = DB::table('vendas')
+            ->select('users.name', 'users.foto' , 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+            ->join('users', 'users.id', 'vendas.ven_vendedor_id')
+            ->groupBy('ven_vendedor_id')
+            ->orderBy('total_vendas', 'DESC')
+            ->get();
+
+          
+       return $vendas;    
 
     }
 

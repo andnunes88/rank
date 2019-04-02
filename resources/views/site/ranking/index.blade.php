@@ -7,6 +7,11 @@
 		height: 25px;
 		border-radius: 50%;
 	}
+
+.barra{
+  height: 25px;
+}
+
 </style>
 
 <!-- Content Wrapper. Contains page content -->
@@ -46,38 +51,38 @@
           
             <thead>
               <tr>
-                <th>Posição</th>
+                <th style="width: 40px">Posição</th>
                 <th>Nome</th>
                 <th>Meta</th>
-                <th style="width: 40px">Vendas</th>
+                <th style="width: 40px">%</th>
                 
               </tr>
             </thead>
 
             <tbody id="lista-vendedores">
 
-              @php
-                $posicao = 1;
-              @endphp
+            @php
+              $posicao = 1;
+            @endphp
 
             @foreach($vendas as $venda) 
             
               <tr> 
-                <td>{{$posicao}} º</td>               
+                <td>{{$posicao}} º</td>
+
                 <td>
-                  <img src="dist/img/user2-160x160.jpg" class="img-ranking" alt="imgagem do vendedor">
-                  {{$venda->ven_vendedor_nome}}
+                  <img src="{{asset($venda->foto)}}" class="img-ranking" alt="imgagem do vendedor">
+                  {{$venda->name}}
                 </td>
                 <td>
-                  <div class="progress progress-xs progress-striped active">
-                    <div class="progress-bar bg-light-blue" style="width: 70%"></div>
+                  <div class="progress progress-xs progress-striped active barra">
+                    <div class="progress-bar bg-light-blue" style="width: {{ number_format( ($venda->total_vendas/$venda->meta)*100, 2 )}}%"></div>
                   </div>
                 </td>
-                <td><span class="badge bg-light-blue">{{$venda->total_vendas}}</span></td>
                 <td>
-                  
-                    <span class="badge bg-light-blue"></span>
-                  
+                  <span class="badge bg-light-blue">{{ number_format( ($venda->total_vendas/$venda->meta)*100, 2 )}} % </span></td>
+                <td>
+                  <span class="badge bg-light-blue"></span>                  
                 </td>            
               </tr>
 
