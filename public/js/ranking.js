@@ -19,6 +19,7 @@ $(function(){
 			success: function(data){
 				
 				var posicao = 1;
+				//var url = 'http://127.0.0.1:8000/';
 
 				$.each(data, function(key){
 
@@ -29,8 +30,12 @@ $(function(){
 		            retorno += 	"</td>";
 					
 					retorno +=	"<td>";
-					retorno += 		"<img src='dist/img/user2-160x160.jpg' class='img-ranking' alt='imgagem do vendedor'>";
+					retorno += 		"<img src='"+ data[key].foto +"' class='img-ranking' alt='imagem do vendedor'>";
 		            retorno +=   	data[key].name; 		             
+		            retorno += 	"</td>";
+
+		            retorno +=	"<td>";
+					retorno +=   	data[key].uni_nome; 		             
 		            retorno += 	"</td>";
 
 					retorno +=	"<td>"
@@ -43,8 +48,8 @@ $(function(){
 			        retorno +=		"<span class='badge bg-light-blue'>" + ((data[key].total_vendas / data[key].meta)*100).toFixed(2) + "</span>";
 			        retorno += "</td>";
 
-					retorno += "<td>";
-					retorno += "</td></tr>";
+					retorno += "</tr>";
+					
 					i++;
 					console.log(data[key]);
 					posicao++;

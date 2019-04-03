@@ -15,8 +15,8 @@ class CreateVendasTable extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ven_vendedor_id')->nullable();
-            $table->string('ven_vendedor_nome')->nullable();
+            $table->integer('ven_vendedor_id')->nullable();
+            $table->integer('ven_unidade_id')->nullable();
             $table->string('ven_aluno')->nullable();
             $table->string('ven_telefone')->nullable();
             $table->string('ven_email')->nullable();
