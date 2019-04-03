@@ -16,6 +16,7 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('cat_nome');
+            $table->decimal('cat_meta', 8, 2)->nullable();
             $table->timestamps();
         });
     }

@@ -28,8 +28,14 @@
 
                         <div class="form-group">
                           <label>Nome da categoria</label>
-                          <input type="text" name="categoria_nome" class="form-control" placeholder="Nome da categoria" value="{{$categoria->cat_nome}}">
+                          <input type="text" name="categoria_nome" class="form-control" value="{{$categoria->cat_nome}}">
                         </div> 
+
+                        <div class="form-group">
+                          <label>Meta da categoria</label>
+                          <input type="text" name="categoria_meta" class="form-control" value="{{$categoria->cat_meta}}" required>
+                        </div> 
+
 
                         <!-- Esse imput hidden é importante para o metódio put funcionar-->
                         <input type="hidden" name="_method" value="put">             

@@ -28,8 +28,13 @@
 
                     <div class="form-group">
                       <label>Nome da categoria</label>
-                      <input type="text" name="categoria_nome" class="form-control" placeholder="Nome da categoria">
-                    </div>              
+                      <input type="text" name="categoria_nome" class="form-control" placeholder="Ex: Diamante" required>
+                    </div>  
+
+                    <div class="form-group">
+                      <label>Meta da categoria</label>
+                      <input type="text" name="categoria_meta" class="form-control" placeholder="Ex: 680.000,00" required>
+                    </div>             
 
                 </div>
                 <!-- /.box-body -->

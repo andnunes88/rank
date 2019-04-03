@@ -28,13 +28,15 @@
 					<tbody>
 						<tr>
 							<th>Categorias</th>
+							<th>Meta</th>
 							<th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
-						</tr>
+						</tr>					
 
 						@foreach ($categorias as $categoria)
 						
 						    <tr>
 							    <td>{{$categoria->cat_nome}}</td>
+							    <td>{{number_format($categoria->cat_meta,2,",",".")}}</td>						    
 
 								<td style="text-align: center">
 									<a href="{{route('categoria.editar', $categoria->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 

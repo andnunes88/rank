@@ -25,6 +25,7 @@ class CategoriaController extends Controller
     	$dados = $request->all();
     	$categoria = new Categoria;
     	$categoria->cat_nome = $dados['categoria_nome'];
+        $categoria->cat_meta = $dados['categoria_meta'];
     	$categoria->save();
 
         \Session::flash('mensagem',['msg'=>'categoria cadastrada com sucesso!','class'=>'alert alert-success']);
@@ -45,6 +46,7 @@ class CategoriaController extends Controller
 
         $categoria = categoria::where('id',$id_categoria)->first();   
         $categoria->cat_nome = $dados['categoria_nome'];
+        $categoria->cat_meta = $dados['categoria_meta'];
         $categoria->update();
        
         \Session::flash('mensagem',['msg'=>'categoria atualizada com sucesso!','class'=>'alert alert-success']);

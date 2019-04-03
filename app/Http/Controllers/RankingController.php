@@ -29,7 +29,6 @@ class RankingController extends Controller
             ->groupBy('ven_vendedor_id')
             ->orderBy('total_vendas', 'DESC')
             ->get();
-
           
        return $vendas;    
 
@@ -51,8 +50,9 @@ class RankingController extends Controller
         }else{
 
             return $vendas = DB::table('vendas')
-                ->select('users.name', 'users.foto' , 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->select('users.name', 'users.foto', 'unidades.uni_nome', 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
                 ->join('users', 'users.id', 'vendas.ven_vendedor_id')
+                ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
                 ->groupBy('ven_vendedor_id')
                 ->orderBy('total_vendas', 'DESC')
                 ->get();
