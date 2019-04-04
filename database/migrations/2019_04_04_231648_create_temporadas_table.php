@@ -15,9 +15,9 @@ class CreateTemporadasTable extends Migration
     {
         Schema::create('temporadas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tem_nome');
-            $table->timestamps('tem_dataInicio')->nullable();
-            $table->timestamps('tem_dataFim')->nullable();
+            $table->string('tem_nome')->nullable();
+            $table->timestamp('tem_dataInicio')->nullable();
+            $table->timestamp('tem_dataFim')->nullable();
             $table->timestamps();
         });
     }
