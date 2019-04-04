@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('frase')->nullable();
             $table->string('tipo')->nullable();
             $table->string('foto')->nullable();
-            $table->decimal('meta', 8, 2)->nullable();
+            $table->boolean('ativo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

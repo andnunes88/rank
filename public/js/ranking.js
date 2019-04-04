@@ -18,8 +18,7 @@ $(function(){
 			dataType: "Json",
 			success: function(data){
 				
-				var posicao = 1;
-				//var url = 'http://127.0.0.1:8000/';
+				var posicao = 1;				
 
 				$.each(data, function(key){
 
@@ -40,12 +39,12 @@ $(function(){
 
 					retorno +=	"<td>"
 		            retorno +=      "<div class='progress progress-xs progress-striped active barra'>"
-		            retorno +=        "<div class='progress-bar bg-light-blue' style='width:" + ((data[key].total_vendas / data[key].meta)*100).toFixed(2)+"%'></div>"
+		            retorno +=        "<div class='progress-bar bg-light-blue' style='width:" + ((data[key].total_vendas / data[key].cat_meta)*100).toFixed(2)+"%'></div>"
 		            retorno +=      "</div>"
 		            retorno +=  "</td>"					     
 
 			        retorno += "<td>";
-			        retorno +=		"<span class='badge bg-light-blue'>" + ((data[key].total_vendas / data[key].meta)*100).toFixed(2) + "</span>";
+			        retorno +=		"<span class='badge bg-light-blue'>" + ((data[key].total_vendas / data[key].cat_meta)*100).toFixed(2) + "</span>";
 			        retorno += "</td>";
 
 					retorno += "</tr>";

@@ -78,11 +78,11 @@
                 <td>{{$venda->uni_nome}}</td>
                 <td>
                   <div class="progress progress-xs progress-striped active barra">
-                    <div class="progress-bar bg-light-blue" style="width: {{ number_format( ($venda->total_vendas/$venda->meta)*100, 2 )}}%"></div>
+                    <div class="progress-bar bg-light-blue" style="width: {{ number_format( ($venda->total_vendas/$venda->cat_meta)*100, 2 )}}%"></div>
                   </div>
                 </td>
                 <td>
-                  <span class="badge bg-light-blue">{{ number_format( ($venda->total_vendas/$venda->meta)*100, 2 )}} % </span></td>
+                  <span class="badge bg-light-blue">{{ number_format( ($venda->total_vendas/$venda->cat_meta)*100, 2 )}} % </span></td>
                 <td>
                   <span class="badge bg-light-blue"></span>                  
                 </td>            

@@ -23,9 +23,10 @@ class RankingController extends Controller
     public function pegarTodasVendas(){
     	
         $vendas = DB::table('vendas')
-            ->select('users.name', 'users.foto','unidades.uni_nome', 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+            ->select('users.name', 'users.foto','unidades.uni_nome', 'categorias.cat_meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
             ->join('users', 'users.id', 'vendas.ven_vendedor_id')
             ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
+            ->join('categorias', 'categorias.id', 'users.categoria_id')
             ->groupBy('ven_vendedor_id')
             ->orderBy('total_vendas', 'DESC')
             ->get();
@@ -38,21 +39,25 @@ class RankingController extends Controller
         
         if($id_categoria != null){
 
-            return $vendas = DB::table('vendas')
-                ->select('users.name', 'users.foto', 'unidades.uni_nome', 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+            $vendas = DB::table('vendas')
+                ->select('users.name', 'users.foto','unidades.uni_nome', 'categorias.cat_meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
                 ->join('users', 'users.id', 'vendas.ven_vendedor_id')
                 ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
+                ->join('categorias', 'categorias.id', 'users.categoria_id')
                 ->Where('ven_categoria_id', $id_categoria)
                 ->groupBy('ven_vendedor_id')
                 ->orderBy('total_vendas', 'DESC')
-                ->get();            
+                ->get(); 
+
+               return $vendas;            
 
         }else{
 
             return $vendas = DB::table('vendas')
-                ->select('users.name', 'users.foto', 'unidades.uni_nome', 'users.meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->select('users.name', 'users.foto','unidades.uni_nome', 'categorias.cat_meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
                 ->join('users', 'users.id', 'vendas.ven_vendedor_id')
                 ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
+                ->join('categorias', 'categorias.id', 'users.categoria_id')
                 ->groupBy('ven_vendedor_id')
                 ->orderBy('total_vendas', 'DESC')
                 ->get();
