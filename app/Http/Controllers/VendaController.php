@@ -29,10 +29,12 @@ class VendaController extends Controller
 
         $vendedor = User::find($id_usuario_logado);      
 
+        
     	$dados = $request->all();
     	$venda = new Venda;
     	$venda->ven_vendedor_id = $vendedor->id;
-        $venda->ven_vendedor_nome = $vendedor->name;
+        $venda->ven_unidade_id = $vendedor->unidade_id;          
+        $venda->ven_categoria_id = $vendedor->categoria_id;                      
         $venda->ven_aluno = $dados['aluno_nome'];
         $venda->ven_telefone = $dados['aluno_telefone'];
         $venda->ven_email = $dados['aluno_email'];        
