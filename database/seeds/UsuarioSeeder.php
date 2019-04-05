@@ -15,7 +15,8 @@ class UsuarioSeeder extends Seeder
         DB::table('users')->insert([
         	'name' => 'Admin',
         	'password' => Hash::make(123456),
-        	'email' => 'admin@admin'
+        	'email' => 'admin@admin',
+            'fotos' => 'img/no-photo.png';
         ]);
     }
 }
