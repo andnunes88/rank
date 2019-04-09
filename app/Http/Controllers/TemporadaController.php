@@ -11,7 +11,7 @@ class TemporadaController extends Controller
     public function index() {
     	
     	$temporadas = Temporada::all();
-
+        //dd($temporadas);
         return view('site.temporada.index', compact('temporadas'));
     }
 
