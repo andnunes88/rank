@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Categoria;
 use App\Unidade;
@@ -36,7 +37,7 @@ class VendedorController extends Controller
         $usuario->tipo = $dados['tipo'];
 		$usuario->unidade_id = $dados['unidade'];
 		$usuario->categoria_id = $dados['categoria'];
-		$usuario->password = bcrypt("mudar@123");
+		$usuario->password = Hash::make('mudar@123');
         $usuario->foto = 'img/no-photo.png';
 				
 		$usuario->save();
@@ -67,7 +68,10 @@ class VendedorController extends Controller
         $usuario->tipo = $dados['tipo'];
         $usuario->unidade_id = $dados['unidade'];
         $usuario->categoria_id = $dados['categoria'];
-        $usuario->password = bcrypt("mudar@123");
+
+        if(isset($dados['senha'])){
+            $usuario->password = Hash::make($dados['senha']);
+        }
                 
         $usuario->update();
        

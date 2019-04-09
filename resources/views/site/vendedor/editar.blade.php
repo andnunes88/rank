@@ -34,8 +34,13 @@
                  </div>
 
                  <div class="form-group">
-                     <label>CPF </label>
-                     <input type="text" name="cpf" class="form-control" placeholder="Nome ..." value="{{$vendedor->cpf}}">
+                     <label>E-mail </label>
+                     <input type="text" name="email" class="form-control" placeholder="Email ..." value="{{$vendedor->email}}">
+                 </div>
+
+                 <div class="form-group">
+                     <label>Senha </label>
+                     <input type="password" name="senha" class="form-control" >
                  </div>
 
                 <!-- Tipo -->
@@ -43,8 +48,8 @@
                       <label>Tipo de usuário</label>
                       <select class="form-control" name="tipo">                        
                             <option value="">Escolher Tipo</option>                        
-                            <option value="gerente">Gerente</option>                 
-                            <option value="vendedor">Vendedor</option>                                    
+                            <option value="gerente" {{ $vendedor->tipo == 'gerente' ? 'selected' : '' }}>Gerente</option>                 
+                            <option value="vendedor" {{ $vendedor->tipo == 'vendedor' ? 'selected' : '' }}>Vendedor</option>                                    
                       </select>
                 </div>
                 <!-- /.tipo group -->              

@@ -37,8 +37,7 @@ class PerfilController extends Controller
 
         if(isset($dados['senha'])){
            
-            $usuario->password = Hash::make($dados['senha']);
-            
+            $usuario->password = Hash::make($dados['senha']);            
         }
 
         $usuario->telefone = $dados['telefone'];
