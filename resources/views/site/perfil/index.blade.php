@@ -17,7 +17,6 @@
 
     <!-- Main content -->
     <section class="content"> 
-
           
           <div class="box-title">
             <button class="btn btn-success">editar</button>

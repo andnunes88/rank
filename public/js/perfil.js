@@ -7,10 +7,18 @@
                 cpf : {
                     required : true
                 },
+
                 senha : {
                     required : true,
                     minlength : 6
+                },
+
+                confirmar_senha : {
+                    required : true,
+                    minlength : 6,
+                    equalTo: "#senha"
                 }
+
             },
             messages : {
                 nome : {
@@ -22,6 +30,12 @@
                 senha : {
                     required : "Informe uma senha.",
                     minlength : "A senha deve possuir pelo menos 6 digitos."
+                },
+
+                confirmar_senha : {
+                    required : "Informe uma senha.",
+                    minlength : "A senha deve possuir pelo menos 6 digitos.",
+                    equalTo: "Entre com a mesma senha acima"
                 }
             }
         });

@@ -49,7 +49,12 @@
 
                  <div class="form-group">
                      <label>Nova Senha </label>
-                     <input type="password" name="senha" class="form-control">                     
+                     <input id="senha" type="password" name="senha" class="form-control">                     
+                 </div> 
+
+                 <div class="form-group">
+                     <label>Confirmar Nova Senha </label>
+                     <input type="password" name="confirmar_senha" class="form-control">                     
                  </div>                    			
 
             </div>

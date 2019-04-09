@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Categoria;
 use App\Unidade;
 use App\User;
 use Auth;
+
 
 class PerfilController extends Controller
 {   
@@ -31,8 +33,14 @@ class PerfilController extends Controller
     	$usuario = User::find($id_usuario);       
     	
     	$usuario->name = $dados['nome'];
-		$usuario->cpf = $dados['cpf'];
-		$usuario->password = bcrypt( $dados['senha'] );		
+		$usuario->cpf = $dados['cpf'];	        
+
+        if(isset($dados['senha'])){
+           
+            $usuario->password = Hash::make($dados['senha']);
+            
+        }
+
         $usuario->telefone = $dados['telefone'];
         $usuario->frase = $dados['frase'];
 
