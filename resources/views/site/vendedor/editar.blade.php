@@ -30,12 +30,12 @@
 
                  <div class="form-group">
                      <label>Nome </label>
-                     <input type="text" name="nome" class="form-control" placeholder="Nome ..." value="{{$vendedor->name}}">
+                     <input type="text" name="nome" class="form-control" placeholder="Nome" value="{{$vendedor->name}}">
                  </div>
 
                  <div class="form-group">
                      <label>E-mail </label>
-                     <input type="text" name="email" class="form-control" placeholder="Email ..." value="{{$vendedor->email}}">
+                     <input type="text" name="email" class="form-control" placeholder="Email" value="{{$vendedor->email}}">
                  </div>
 
                  <div class="form-group">

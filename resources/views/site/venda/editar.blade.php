@@ -19,9 +19,11 @@
 	<!-- Main content -->
 	<section class="content">      
 
-    <form action="{{route('venda.salvar')}}" method="post">
+    <form action="{{route('venda.atualizar', $venda->id)}}" method="post">
 
         {{ csrf_field() }}
+
+        {{ method_field('PUT') }}
 
         <div class="box box-danger">
 

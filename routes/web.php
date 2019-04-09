@@ -7,15 +7,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware'=>'auth'], function(){
+    
 # Vendedor
 Route::get('/home', 'HomeController@index')->name('home');
-
+    
 # Perfil
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('/perfil/novo', 'PerfilController@cadastrarPerfil')->name('perfil.cadastrar');
 Route::post('/perfil/salvar/', 'PerfilController@salvarPerfil')->name('perfil.salvar');
 Route::put('/perfil/atualizar/{id_usuario}', 'PerfilController@atualizarPerfil')->name('perfil.atualizar');
-
+    
 #Cursos
 Route::get('/cursos', 'CursoController@index')->name('cursos');
 Route::get('/curso/novo', 'CursoController@cadastrarCurso')->name('curso.cadastrar');
@@ -28,9 +30,9 @@ Route::get('/curso/excluir/{id_curso}', 'CursoController@excluirCurso')->name('c
 Route::get('/vendas', 'vendaController@index')->name('vendas');
 Route::get('/venda/novo', 'vendaController@cadastrarVenda')->name('venda.cadastrar');
 Route::post('/venda/salvar/', 'vendaController@salvarVenda')->name('venda.salvar');
-Route::get('/venda/editar/{id_curso}', 'vendaController@editarVenda')->name('venda.editar');
-Route::put('/venda/atualizar/{id_curso}', 'vendaController@atualizarVenda')->name('venda.atualizar');
-Route::get('/venda/excluir/{id_curso}', 'vendaController@excluirVenda')->name('venda.excluir');
+Route::get('/venda/editar/{id_venda}', 'vendaController@editarVenda')->name('venda.editar');
+Route::put('/venda/atualizar/{id_venda}', 'vendaController@atualizarVenda')->name('venda.atualizar');
+Route::get('/venda/excluir/{id_venda}', 'vendaController@excluirVenda')->name('venda.excluir');
 
 # Alunos
 Route::get('/alunos', 'AlunoController@index')->name('alunos');
@@ -78,3 +80,5 @@ Route::get('/ranking-json/{id_categoria?}', 'RankingController@pegarTodasVendasJ
 Route::get('/meta', 'RankingController@calculaMeta')->name('meta');
 
 Route::get('/sair', 'HomeController@sair')->name('sair');
+
+});

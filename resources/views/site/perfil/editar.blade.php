@@ -43,8 +43,8 @@
                  </div>
 
                  <div class="form-group">
-                     <label>CPF </label>
-                     <input type="text" name="cpf" class="form-control" value="{{$usuario->cpf}}">
+                     <label>Email</label>
+                     <input type="text" name="email" class="form-control" value="{{$usuario->email}}">
                  </div>
 
                  <div class="form-group">
@@ -72,7 +72,7 @@
             <!-- foto Picker -->
             <div class="form-group">
                   <label for="exampleInputFile">Foto do Perfil</label>
-                  <input type="file" name="imagem">
+                  <input type="file" name="imagem" value="{{$usuario->foto}}">
 
                   <p class="help-block">Escolha uma foto para seu perfil</p>
             </div>

@@ -9,12 +9,12 @@
                 },
 
                 senha : {
-                    required : true,
+                    required : false,
                     minlength : 6
                 },
 
                 confirmar_senha : {
-                    required : true,
+                    required : false,
                     minlength : 6,
                     equalTo: "#senha"
                 }

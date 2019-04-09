@@ -28,12 +28,14 @@ class PerfilController extends Controller
 
     public function atualizarPerfil(Request $request, $id_usuario){
 
-    	$dados = $request->all();
+        $dados = $request->all();
+        
+        dd($dados);
     	        
     	$usuario = User::find($id_usuario);       
     	
     	$usuario->name = $dados['nome'];
-		$usuario->cpf = $dados['cpf'];	        
+		$usuario->email = $dados['email'];	        
 
         if(isset($dados['senha'])){
            
@@ -43,7 +45,7 @@ class PerfilController extends Controller
         $usuario->telefone = $dados['telefone'];
         $usuario->frase = $dados['frase'];
 
-        $file = $request->file('imagem');        
+        $file = $request->file('imagem');
         if($file){
             $rand = rand(11111,99999);
             $diretorio = "img/perfil/".$id_usuario."/";
