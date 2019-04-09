@@ -16,7 +16,7 @@ class UsuarioSeeder extends Seeder
         	'name' => 'Admin',
         	'password' => Hash::make(123456),
         	'email' => 'admin@admin',
-            'fotos' => 'img/no-photo.png';
+            'foto' => 'img/no-photo.png'
         ]);
     }
 }
