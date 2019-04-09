@@ -28,7 +28,7 @@
 					<tbody>
 						<tr>
 							<th>Categorias</th>
-							<th>Meta</th>
+							<th>Meta da Categoria</th>
 							<th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
 						</tr>					
 

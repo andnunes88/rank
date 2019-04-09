@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                       <label>Nome da Unidade</label>
-                      <input type="text" name="unidade_nome" class="form-control" placeholder="Nome da unidade">
+                      <input type="text" name="unidade_nome" class="form-control" placeholder="Nome da unidade" required>
                     </div>              
 
                 </div>
