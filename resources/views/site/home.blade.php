@@ -55,40 +55,25 @@
               <!-- /.info-box -->
             </div>
             <!-- /.col -->
+            @can('gerente')
             
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <a href="{{route('vendedores')}}">
-                  <span class="info-box-icon bg-green"><i class="fa fa-user-plus"></i></span>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                  <a href="{{route('vendedores')}}">
+                    <span class="info-box-icon bg-green"><i class="fa fa-user-plus"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Lista</span>
-                    <span class="info-box-number">Usuários</span>
-                  </div>
-                  <!-- /.info-box-content -->
-                </a>
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-
-            <!--  Quem sabe na próxima versão
-            <div class="col-md-3 col-sm-6 col-xs-12">
-
-              <div class="info-box">
-
-                <span class="info-box-icon bg-red"><i class="fa fa-pie-chart"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Relatório</span>
-                  <span class="info-box-number">Equipe</span>
+                    <div class="info-box-content">
+                      <span class="info-box-text">Lista</span>
+                      <span class="info-box-number">Usuários</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                  </a>
                 </div>
-                
+                <!-- /.info-box -->
               </div>
-              
-            </div>
-            -->
+              <!-- /.col -->
 
+            @endcan
 
           </div>
 

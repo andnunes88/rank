@@ -1,18 +1,5 @@
 <?php
 
-Route::get('/teste', function () {
-    /*
-	$usuario = new App\User();
-    $usuario->name = 'admin';
-    $usuario->email = 'admin@admin';
-    $usuario->password = Hash::make('master');
-    $usuario->save();*/
-
-    $venda = App\Venda::where('id', 3)->first();
-   
-  	dd($venda->usuario->meta_mensal);
-    
-});
 
 Route::get('/', function () {
     return view('auth.login');
