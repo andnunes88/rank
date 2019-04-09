@@ -119,7 +119,7 @@ desired effect
         </div>
       </div>
 
-      <!-- search form (Optional) -->
+      <!-- search form (Optional) 
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -129,20 +129,21 @@ desired effect
             </span>
         </div>
       </form>
-      <!-- /.search form -->
+      search form -->
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">MENU</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="{{route('ranking')}}"><i class="fa fa-sitemap"></i> <span>Ranking</span></a></li>
         <li><a href="{{route('unidades')}}"><i class="fa fa-university"></i> <span>Unidades</span></a></li>
         <li><a href="{{route('categorias')}}"><i class="fa fa-th"></i> <span>Categorias</span></a></li>
-        <li><a href="{{route('temporadas')}}"><i class="fa fa-link"></i> <span>Temporadas</span></a></li>
-        <li><a href="{{route('cursos')}}"><i class="fa fa-link"></i> <span>Cursos</span></a></li>
+        <li><a href="{{route('temporadas')}}"><i class="fa fa-calendar-o"></i> <span>Temporadas</span></a></li>
+        <li><a href="{{route('vendas')}}"><i class="fa fa-shopping-bag"></i> <span>Vendas</span></a></li>
+        <!--
+        <li><a href="{{route('cursos')}}"><i class="fa fa-link"></i> <span>Cursos</span></a></li>     
         <li><a href="{{route('alunos')}}"><i class="fa fa-link"></i> <span>Alunos</span></a></li>
-        <li><a href="{{route('vendas')}}"><i class="fa fa-link"></i> <span>Vendas</span></a></li>
-        
+        -->
 
       </ul>
       <!-- /.sidebar-menu -->

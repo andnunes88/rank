@@ -49,10 +49,6 @@
       </div>
     </form>
 
-
-    <a href="#">Recuperar Senha</a><br>
-    <a href="register.html" class="text-center">Registrar Novo Usuário</a>
-
   </div>
   <!-- /.login-box-body -->
 </div>
