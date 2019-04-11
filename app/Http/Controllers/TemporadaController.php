@@ -11,7 +11,7 @@ class TemporadaController extends Controller
     public function index() {
     	
     	$temporadas = Temporada::all();
-        //dd($temporadas);
+       
         return view('site.temporada.index', compact('temporadas'));
     }
 
@@ -68,5 +68,23 @@ class TemporadaController extends Controller
         \Session::flash('mensagem',['msg'=>'Temporada Excluida com sucesso!','class'=>'alert alert-success']);
 
         return redirect()->route('temporadas');
+    }
+
+    public function ativarTemporada($id_temporada){
+
+        $temporada = Temporada::where('id', $id_temporada)->first(); 
+
+        if($temporada->status == 1){
+            $temporada->status = 0;  
+            $temporada->update();
+        }else{
+           $temporada->status = 1;  
+           $temporada->update();
+        }
+
+        \Session::flash('mensagem',['msg'=>'Temporada Ativada com sucesso!','class'=>'alert alert-success']);
+
+        return redirect()->route('temporadas');
+        
     }
 }

@@ -18,6 +18,7 @@ class CreateTemporadasTable extends Migration
             $table->string('tem_nome')->nullable();
             $table->timestamp('tem_dataInicio')->nullable();
             $table->timestamp('tem_dataFim')->nullable();
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

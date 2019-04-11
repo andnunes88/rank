@@ -18,6 +18,7 @@ class CreateVendasTable extends Migration
             $table->integer('ven_vendedor_id')->nullable();
             $table->integer('ven_unidade_id')->nullable();
             $table->integer('ven_categoria_id')->nullable();
+            $table->integer('ven_categoria_id')->nullable();
             $table->string('ven_aluno')->nullable();
             $table->string('ven_telefone')->nullable();
             $table->string('ven_email')->nullable();

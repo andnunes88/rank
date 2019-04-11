@@ -28,6 +28,7 @@
             <th>Nome</th>
             <th>Data Início</th>
             <th>Data Fim</th>
+            <th>Status</th>
             <th style="text-align: center"><i class="glyphicon glyphicon-cog"></i></th>
           </tr>
 
@@ -36,7 +37,9 @@
               <td>{{$temporada->tem_nome}}</td>              
               <td>{{ date('d/m/Y', strtotime($temporada->tem_dataInicio)) }}</td>
               <td>{{ date('d/m/Y', strtotime($temporada->tem_dataFim)) }}</td>
+              <td>{{ $temporada->status == 1 ? 'Ativo' : 'Inativo' }}</td>
               <td style="text-align: center">
+                <a href="{{route('temporada.ativar', $temporada->id)}}"> <div class="btn btn-sm btn-success"><i class="glyphicon glyphicon-ok"></i></div></a>
 
                 <a href="{{route('temporada.editar', $temporada->id)}}"> <div class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-pencil"></i></div></a> 
                   <a href="javascript: if(confirm('Apagar esse registro?')){ window.location.href = '{{ route('temporada.excluir', $temporada->id) }}' }"> <div class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></div></a>
