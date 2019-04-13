@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Venda;
 use Auth;
 use App\User;
+use App\Temporada;
 
 class VendaController extends Controller
 {
@@ -25,22 +26,32 @@ class VendaController extends Controller
 
     public function salvarVenda(Request $request){
 
-        $id_usuario_logado = Auth::user()->id;
+        $temporada_ativa = Temporada::where('status', 1)->first();
 
-        $vendedor = User::find($id_usuario_logado);      
+        if($temporada_ativa != null){        
 
-        
-    	$dados = $request->all();
-    	$venda = new Venda;
-    	$venda->ven_vendedor_id = $vendedor->id;
-        $venda->ven_unidade_id = $vendedor->unidade_id;          
-        $venda->ven_categoria_id = $vendedor->categoria_id;                      
-        $venda->ven_aluno = $dados['aluno_nome'];
-        $venda->ven_telefone = $dados['aluno_telefone'];
-        $venda->ven_email = $dados['aluno_email'];        
-        $venda->ven_valor = $dados['aluno_valor'];        
-        $venda->ven_data = new \DateTime();        
-    	$venda->save();
+            $id_usuario_logado = Auth::user()->id;
+
+            $vendedor = User::find($id_usuario_logado);      
+            
+        	$dados = $request->all();
+        	$venda = new Venda;
+        	$venda->ven_vendedor_id = $vendedor->id;
+            $venda->ven_unidade_id = $vendedor->unidade_id;          
+            $venda->ven_categoria_id = $vendedor->categoria_id;                      
+            $venda->ven_temporada_id = $temporada_ativa->id;                      
+            $venda->ven_aluno = $dados['aluno_nome'];
+            $venda->ven_telefone = $dados['aluno_telefone'];
+            $venda->ven_email = $dados['aluno_email'];        
+            $venda->ven_valor = $dados['aluno_valor'];        
+            $venda->ven_data = new \DateTime();        
+        	$venda->save();
+
+        }else{
+            \Session::flash('mensagem',['msg'=>'Não foi possivel registrar sua venda. Não existe temporada ativa!','class'=>'alert alert-danger']);
+
+            return redirect()->route('vendas');
+        }
 
         \Session::flash('mensagem',['msg'=>'venda cadastrada com sucesso!','class'=>'alert alert-success']);
 

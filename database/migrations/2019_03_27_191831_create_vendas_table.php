@@ -15,10 +15,10 @@ class CreateVendasTable extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ven_vendedor_id')->nullable();
-            $table->integer('ven_unidade_id')->nullable();
-            $table->integer('ven_categoria_id')->nullable();
-            $table->integer('ven_categoria_id')->nullable();
+            $table->integer('ven_vendedor_id')->unsigned()->nullable();
+            $table->integer('ven_unidade_id')->unsigned()->nullable();
+            $table->integer('ven_categoria_id')->unsigned()->nullable();
+            $table->integer('ven_temporada_id')->unsigned()->nullable();
             $table->string('ven_aluno')->nullable();
             $table->string('ven_telefone')->nullable();
             $table->string('ven_email')->nullable();
