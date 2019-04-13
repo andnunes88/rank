@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Temporada;
 
-class TemporadaController extends Controller
-{
+class TemporadaController extends Controller {
+
+    public $idTemporadaBD;
+
     //
     public function index() {
     	
@@ -71,20 +73,52 @@ class TemporadaController extends Controller
     }
 
     public function ativarTemporada($id_temporada){
-
-        $temporada = Temporada::where('id', $id_temporada)->first(); 
-
-        if($temporada->status == 1){
-            $temporada->status = 0;  
-            $temporada->update();
-        }else{
-           $temporada->status = 1;  
-           $temporada->update();
+        $temporadasAtiva = Temporada::where('status', 1)->get();
+    
+        foreach ($temporadasAtiva as $temporadaAtiva) {
+            $this->idTemporadaBD = $temporadaAtiva->id;
         }
 
-        \Session::flash('mensagem',['msg'=>'Temporada Ativada com sucesso!','class'=>'alert alert-success']);
+        if($temporadasAtiva->count() > 0) { //existe uma temporada ativa
+
+            $this->atualizarDesativarTemporada($this->idTemporadaBD);
+
+            $this->atualizarAtivarTemporada($id_temporada);
+
+            $this->desativaTemporadaAtiva($id_temporada);
+
+        } else {
+
+            $this->atualizarAtivarTemporada($id_temporada);
+
+        }
 
         return redirect()->route('temporadas');
         
+    }
+
+    private function atualizarAtivarTemporada($id_temporada){
+
+        $temporada = Temporada::where('id', $id_temporada)->first();
+        $temporada->status = 1;
+        $temporada->update();
+
+    }
+
+    private function atualizarDesativarTemporada($id_temporada){
+
+        $temporada = Temporada::where('id', $this->idTemporadaBD)->first();
+        $temporada->status = 0;
+        $temporada->update(); 
+    }
+
+    private function desativaTemporadaAtiva($id_temporada){
+        
+        $temporada = Temporada::where('id', $this->idTemporadaBD)->first();
+
+        if(($temporada->status == 1) != null) {
+
+            $this->atualizarDesativarTemporada($this->idTemporadaBD);
+        }
     }
 }

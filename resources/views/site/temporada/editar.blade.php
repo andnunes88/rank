@@ -33,7 +33,7 @@
 
                     <div class="form-group">
                       <label>Data Inicio</label>
-                      <input type="date" name="data_inicio" class="form-control" value="{{$temporada->tem_dataInicio}}">
+                      <input type="date" name="data_inicio" class="form-control" value="{{ $temporada->tem_dataInicio}}">
                     </div> 
 
                     <div class="form-group">
