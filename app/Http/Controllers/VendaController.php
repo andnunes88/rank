@@ -53,7 +53,7 @@ class VendaController extends Controller
             return redirect()->route('vendas');
         }
 
-        \Session::flash('mensagem',['msg'=>'venda cadastrada com sucesso!','class'=>'alert alert-success']);
+        \Session::flash('mensagem',['msg'=>'Venda cadastrada com sucesso!','class'=>'alert alert-success']);
 
         return redirect()->route('vendas');
     }
@@ -76,7 +76,7 @@ class VendaController extends Controller
         $venda->ven_valor = $dados['aluno_valor']; 
         $venda->update();
        
-        \Session::flash('mensagem',['msg'=>'venda atualizada com sucesso!','class'=>'alert alert-success']);
+        \Session::flash('mensagem',['msg'=>'Venda atualizada com sucesso!','class'=>'alert alert-success']);
 
         return redirect()->route('vendas');
        
@@ -88,7 +88,7 @@ class VendaController extends Controller
 
         $venda->delete();
 
-        \Session::flash('mensagem',['msg'=>'venda Excluida com sucesso!','class'=>'alert alert-success']);
+        \Session::flash('mensagem',['msg'=>'Venda excluida com sucesso!','class'=>'alert alert-success']);
 
         return redirect()->route('vendas');
     }

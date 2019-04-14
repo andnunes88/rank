@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Temporada;
+use App\Venda;
 
 class TemporadaController extends Controller {
 
@@ -65,9 +66,16 @@ class TemporadaController extends Controller {
         
         $temporada = Temporada::find($id_temporada);
 
-        $temporada->delete();
+        $vendas = Venda::where('ven_temporada_id', $id_temporada)->get();
 
-        \Session::flash('mensagem',['msg'=>'Temporada Excluida com sucesso!','class'=>'alert alert-success']);
+        if($vendas->count() > 0){
+            \Session::flash('mensagem',['msg'=>'Não foi possivel excluir essa temporada. Existe venda registrada.','class'=>'alert alert-danger']);
+        }else{
+
+            $temporada->delete();
+
+            \Session::flash('mensagem',['msg'=>'Temporada Excluida com sucesso!','class'=>'alert alert-success']);
+        }        
 
         return redirect()->route('temporadas');
     }

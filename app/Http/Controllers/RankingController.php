@@ -23,19 +23,36 @@ class RankingController extends Controller
 
     public function pegarTodasVendas(){
 
-        $temporada = Temporada::where('status', 1)->first();
+        $temporada = Temporada::where('status', 1)->first();               
     	
-        $vendas = DB::table('vendas')
-            ->select('users.name', 'users.foto','unidades.uni_nome', 'categorias.cat_meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
-            ->join('users', 'users.id', 'vendas.ven_vendedor_id')
-            ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
-            ->join('categorias', 'categorias.id', 'users.categoria_id')
-             ->Where('ven_temporada_id', $temporada->id)
-            ->groupBy('ven_vendedor_id')
-            ->orderBy('total_vendas', 'DESC')
-            ->get();
-          
-       return $vendas;    
+        if($temporada == null){
+
+            $vendas = DB::table('vendas')
+                ->select('users.name', 'users.foto','unidades.uni_nome', 'categorias.cat_meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->join('users', 'users.id', 'vendas.ven_vendedor_id')
+                ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
+                ->join('categorias', 'categorias.id', 'users.categoria_id')
+                ->groupBy('ven_vendedor_id')
+                ->orderBy('total_vendas', 'DESC')
+                ->get();
+
+                \Session::flash('mensagem',['msg'=>'Nenhuma temporada Cadastrada ou Ativa','class'=>'alert alert-warning']);
+            
+        }else{
+
+            $vendas = DB::table('vendas')
+                ->select('users.name', 'users.foto','unidades.uni_nome', 'categorias.cat_meta', DB::raw('SUM(vendas.ven_valor) as total_vendas'))
+                ->join('users', 'users.id', 'vendas.ven_vendedor_id')
+                ->join('unidades', 'unidades.id', 'vendas.ven_unidade_id')
+                ->join('categorias', 'categorias.id', 'users.categoria_id')
+                ->Where('ven_temporada_id', $temporada->id)
+                ->groupBy('ven_vendedor_id')
+                ->orderBy('total_vendas', 'DESC')
+                ->get();
+
+        }
+              
+        return $vendas;        
 
     }
 
