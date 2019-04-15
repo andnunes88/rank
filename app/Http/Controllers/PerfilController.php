@@ -29,9 +29,7 @@ class PerfilController extends Controller
     public function atualizarPerfil(Request $request, $id_usuario){
 
         $dados = $request->all();
-        
-        dd($dados);
-    	        
+           	        
     	$usuario = User::find($id_usuario);       
     	
     	$usuario->name = $dados['nome'];
@@ -54,7 +52,7 @@ class PerfilController extends Controller
             $file->move($diretorio, $nomeArquivo);
             $usuario->foto = $diretorio.'/'.$nomeArquivo;
         }else{
-            $usuario->foto = 'img/no-photo.png';
+            $usuario->foto = $usuario->foto;
         }
 
 		$usuario->update();
